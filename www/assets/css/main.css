@@ -1,0 +1,58 @@
+:root {
+    --font-family: 'Rubik', Helvetica, Arial, sans-serif;
+    /*
+    * Media queries breakpoints
+    * ======================================================================== */
+    /* Extra small screen / phone */
+    --sc-xs-min: 480px;
+    /* Small screen / tablet */
+    --sc-sm-min: 768px;
+    /* Medium screen / desktop */
+    --sc-md-min: 992px;
+    /* Large screen / wide desktop */
+    --sc-lg-min: 1200px;
+    /*
+    * Colors
+    * ======================================================================== */
+    --white: #FFFFFF;
+    --red: #e62c3d;
+    --yell: #f9c468;
+    --oran: #ef7752;
+    --yell2: #F5D64A;
+    --pink: #FF57CF;
+    --bodyBg: #F9F9F9;
+    --CompanyColor: #EA5047;
+    --blueGeneral: #363949;
+    --texColor: #888888;
+    --gris-claro: #f9f9f9;
+    /*
+    * Sizes
+    * ======================================================================== */
+    --generalWidth: 1000px;
+    --mediumWidth: 500px;
+    --smallWidth: 250px;
+    --iconSize: 85px;
+    --fontSizeTitle: 3.3rem;
+    --fontSizeSubtitle: 2.3rem;
+    --fontSizeText: 1.3rem;
+    --slimLetters: 100;
+    --boldLetters: 700;
+}
+
+body {
+    background-color: var(--bodyBg);
+    font-family: var(--font-family);
+    font-size: var(--fontSizeText);
+    font-weight: var(--slimLetters);
+    color: var(--texColor);
+}
+
+.center-element {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.general-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
