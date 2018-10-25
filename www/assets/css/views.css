@@ -271,3 +271,14 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/*
+    ******************************************  HERO
+    ******************************************  
+    ******************************************          
+*/
+
+.titleHero{
+    color: var(--white);
+    font-size: var(--fontSizeTitle);
+    font-weight: var(--boldLetters);
+}

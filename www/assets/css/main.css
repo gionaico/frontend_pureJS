@@ -25,6 +25,8 @@
     --blueGeneral: #363949;
     --texColor: #888888;
     --gris-claro: #f9f9f9;
+    --gradient_1: #13547a;
+    --gradient_2: #80d0c7;
     /*
     * Sizes
     * ======================================================================== */
@@ -55,4 +57,14 @@ body {
 .general-padding {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.center-inside-elements-flex {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.grad {
+    background-image: linear-gradient(to bottom right, var(--gradient_1), var(--gradient_2));
 }
