@@ -1,6 +1,8 @@
 import {Router} from './router.js'; //Knows what to do for every single URL 
 import HomeController from './controllers/HomeCtrl';
 import ContactController from './controllers/ContactCtrl';
+import AvisoLegalController from './controllers/AvisoLegalCtrl';
+import PoliticaCookiesController from './controllers/PoliticaCookiesCtrl';
 import {header} from './views/header';
 import {footer} from './views/footer';
 import {get} from './utils';
@@ -11,6 +13,14 @@ Router
   .add(/contact/, function () {
     console.log("Contact");
     ContactController.render();
+  })
+  .add(/cookies/, function () {
+    console.log("cookies");
+    PoliticaCookiesController.render();
+  })
+  .add(/avisoLegal/, function () {
+    console.log("avisoLegal");
+    AvisoLegalController.render();
   }).listen()
   .add(/products\/(.*)\/edit\/(.*)/, function () {
     console.log('products', arguments);

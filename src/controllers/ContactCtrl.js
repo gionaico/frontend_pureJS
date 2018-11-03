@@ -17,7 +17,7 @@ class ContactController {
             get(Settings.baseURL + '/datos_empresa').then(function (response) {
                 let datosEmpresa=JSON.parse(response);
                 try{
-                    document.getElementById('main').innerHTML = hero("CONTACT")+view(datosEmpresa);
+                    document.getElementById('main').innerHTML = hero("CONTACT", "grad") + view(datosEmpresa);
                     initMap(datosEmpresa);
 
                     let a1 = document.querySelector("#form__button").addEventListener("click", function (e) {

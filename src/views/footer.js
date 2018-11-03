@@ -1,6 +1,25 @@
 let footer = function(company) {
     return `
-    
+      <div class="footer__menu center-inside-elements-flex">
+        <ul class="footer__menu-list">
+          <li class="footer__menu-list">
+            <a href="#cookies">Cookies</a>
+          </li>
+
+          <span class="footer__menu-separador">|</span>
+
+          <li class="footer__menu-list">
+            <a href="#avisoLegal">Aviso legal</a>
+          </li>
+
+          <span class="footer__menu-separador">|</span>
+
+          <li class="footer__menu-list">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      
       <div class="footer__grid">
         <div class="footer__elem1">
           <div class="footer__elemsTitle">

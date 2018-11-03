@@ -3,11 +3,13 @@
     ******************************************  
     ******************************************          
 */
+
 .header__menu {
     display: inline-block;
     width: 100%;
 }
-.header__top{
+
+.header__top {
     height: 25px;
     background-color: var(--blueGeneral);
     color: var(--white);
@@ -16,9 +18,9 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.header__topIcon{    
+.header__topIcon {
     height: 15px;
-    padding-left: 15px;  
+    padding-left: 15px;
 }
 
 .header {
@@ -154,6 +156,25 @@
     ******************************************          
 */
 
+.footer__menu-separador {
+    color: var(--white);
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.footer__menu-list {
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.footer__menu-list>a {
+    color: var(--white);
+}
+.footer__menu{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 #footer {
     background-color: var(--blueGeneral);
     margin-top: 30px;
@@ -269,58 +290,89 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 500px;
+    min-height: 300px;
 }
 
 #result {
     max-width: var(--generalWidth);
 }
+
 /*
     ******************************************  HOME
     ******************************************  
     ******************************************          
 */
+
 .contact-container {
     max-width: var(--generalWidth);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;
 }
+
 .tarifas-container {
     max-width: var(--generalWidth);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
 }
+
 .h {
     height: 100px;
     border: 1px solid red;
 }
+
 @media (min-width: 768px) {
     .contact-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 /*
     ******************************************  HERO
     ******************************************  
     ******************************************          
 */
 
-.titleHero{
+.titleHero {
     color: var(--white);
     font-size: var(--fontSizeTitle);
     font-weight: var(--boldLetters);
+    text-align: center;
+}
+
+/*
+    ******************************************  AVISO LEGAL
+    ******************************************  
+    ******************************************          
+*/
+
+.avisoLegal-container {
+    /* background-color:var(--white); */
+    max-width: var(--generalWidth);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.avisoLegal-container__title{
+    color:var(--blueGeneral);
+    font-weight: var(--boldLetters);
+}
+.avisoLegal-container__p-espacios {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: justify;
 }
 /*
     ******************************************  CONTACT
     ******************************************  
     ******************************************          
 */
-.contact{
+
+.contact {
     max-width: var(--generalWidth);
 }
-.contact__grid{
+
+.contact__grid {
     /* background-color: red; */
     display: grid;
     align-items: center;
@@ -328,22 +380,27 @@
     gap: 30px;
     grid-template-columns: 1fr;
 }
-.contact__gridForm{
+
+.contact__gridForm {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr;
 }
-.contact__gridForm>textarea{
+
+.contact__gridForm>textarea {
     height: 70px;
 }
-.contatc__gridForm-elem{
+
+.contatc__gridForm-elem {
     height: 30px;
 }
-.contatc__gridForm-btn{
+
+.contatc__gridForm-btn {
     height: 40px;
-    color:var(--white);
-    font-weight:var(--boldLetters);
+    color: var(--white);
+    font-weight: var(--boldLetters);
 }
+
 @media (min-width: 768px) {
     .contact__grid {
         grid-template-columns: 1fr 1fr;
