@@ -3,6 +3,8 @@
     /*
     * Media queries breakpoints
     * ======================================================================== */
+    /* Extra small screen / phone horiz */
+    --sc-xs-min-horiz: 320px;
     /* Extra small screen / phone */
     --sc-xs-min: 480px;
     /* Small screen / tablet */
@@ -41,6 +43,12 @@
     --boldLetters: 700;
 }
 
+*{
+    margin: 0;
+}
+a{
+    cursor: pointer;
+}
 body {
     background-color: var(--bodyBg);
     font-family: var(--font-family);
@@ -58,6 +66,9 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+.general-padding4 {
+    padding: 20px;
+}
 
 .center-inside-elements-flex {
      display: flex;
@@ -67,4 +78,11 @@ body {
 
 .grad {
     background-image: linear-gradient(to bottom right, var(--gradient_1), var(--gradient_2));
+}
+.fg-slider {
+    height: 500px!important;
+}
+.centrado-vertical{
+    /* alineacion vertical */
+    align-items: center;
 }

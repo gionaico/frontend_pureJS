@@ -38,6 +38,55 @@ function get(url) {
 
   });
 }
+
+/* function post(url, data) {
+  return new Promise(function (resolve, reject) {    
+      var req = new XMLHttpRequest();
+      req.open('POST', url);
+      req.onload = function () {
+        if (req.status == 200) {
+          console.log("sfvmnkjfbv")
+          resolve(req.response);
+        } else {
+          console.log(7777777777, req.statusText)
+          reject(Error(req.statusText));
+        }
+      };
+      req.onerror = function () {
+        reject(Error("Network Error"));
+      };
+      req.send(data);
+  });
+} */
+
+function post(url, data) {
+  return new Promise(function (resolve, reject) {
+    var ajax = new XMLHttpRequest();
+
+    // Seta tipo de requisição: Post e a URL da API
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    // Seta paramêtros da requisição e envia a requisição
+    ajax.send(data);
+
+    // Cria um evento para receber o retorno.
+    ajax.onreadystatechange = function () {
+
+      // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+      if (ajax.readyState == 4 && ajax.status == 200) {
+
+        var res = ajax.responseText;
+
+        // Retorno do Ajax
+        console.log(res);
+        resolve(ajax.response);
+      }else{
+        reject(Error(ajax.statusText));
+      }
+    }
+  });
+}
   
 function generaTemplate(strings, ...keys) {
   return function (data) {
@@ -67,5 +116,6 @@ function initMap(data) {
 export {
   get,
   generaTemplate,
-  initMap
+  initMap,
+  post
 };

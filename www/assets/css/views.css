@@ -3,12 +3,29 @@
     ******************************************  
     ******************************************          
 */
+.header__menu {
+    display: inline-block;
+    width: 100%;
+}
+.header__top{
+    height: 25px;
+    background-color: var(--blueGeneral);
+    color: var(--white);
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header__topIcon{    
+    height: 15px;
+    padding-left: 15px;  
+}
 
 .header {
     /* background-color: transparent; */
     background-color: #fff;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 1;
 }
@@ -32,7 +49,7 @@
     background-color: #f4f4f4;
 }
 
-.header .logo {
+.header .header__logo {
     display: block;
     float: left;
     font-size: 2em;
@@ -147,7 +164,7 @@
     padding: 2rem;
 }
 
-.gloriaGrid {
+.footer__grid {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -159,17 +176,17 @@
     color: var(--textGeneral);
 }
 
-.elemsTitle>p {
+.footer__elemsTitle>p {
     color: var(--white);
     font-weight: var(--boldLetters);
 }
 
-.elem1 {
+.footer__elem1 {
     grid-area: elem1;
     padding: 20px;
 }
 
-.elem2 {
+.footer__elem2 {
     grid-area: elem2;
     padding: 20px;
     display: flex;
@@ -178,7 +195,7 @@
     text-align: justify;
 }
 
-.elem3 {
+.footer__elem3 {
     grid-area: elem3;
     padding: 20px;
     text-align: right;
@@ -202,14 +219,14 @@
 }
 
 @media (min-width: 576px) {
-    .gloriaGrid {
+    .footer__grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "elem1 elem3" "elem2 elem2";
     }
 }
 
 @media (min-width: 992px) {
-    .gloriaGrid {
+    .footer__grid {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: "elem1 elem2 elem3";
     }
@@ -258,14 +275,27 @@
 #result {
     max-width: var(--generalWidth);
 }
-
+/*
+    ******************************************  HOME
+    ******************************************  
+    ******************************************          
+*/
 .contact-container {
     max-width: var(--generalWidth);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;
 }
-
+.tarifas-container {
+    max-width: var(--generalWidth);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+.h {
+    height: 100px;
+    border: 1px solid red;
+}
 @media (min-width: 768px) {
     .contact-container {
         grid-template-columns: repeat(2, 1fr);
@@ -281,4 +311,41 @@
     color: var(--white);
     font-size: var(--fontSizeTitle);
     font-weight: var(--boldLetters);
+}
+/*
+    ******************************************  CONTACT
+    ******************************************  
+    ******************************************          
+*/
+.contact{
+    max-width: var(--generalWidth);
+}
+.contact__grid{
+    /* background-color: red; */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: 1fr;
+}
+.contact__gridForm{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+}
+.contact__gridForm>textarea{
+    height: 70px;
+}
+.contatc__gridForm-elem{
+    height: 30px;
+}
+.contatc__gridForm-btn{
+    height: 40px;
+    color:var(--white);
+    font-weight:var(--boldLetters);
+}
+@media (min-width: 768px) {
+    .contact__grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }

@@ -24,6 +24,8 @@ Router
 });
 console.log(Router)
 HomeController.render();
+
+
 let d = get(Settings.baseURL + '/datos_empresa').then(function (response) {
   let datosEmpresa = JSON.parse(response);
   console.log(datosEmpresa);
