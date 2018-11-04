@@ -3,10 +3,14 @@
     ******************************************  
     ******************************************          
 */
-
+.header__menu-logo{
+    height: 60px;
+    width: 120px;
+}
 .header__menu {
     display: inline-block;
     width: 100%;
+    height: 60px;
 }
 
 .header__top {
@@ -54,8 +58,8 @@
 .header .header__logo {
     display: block;
     float: left;
-    font-size: 2em;
-    padding: 10px 20px;
+    /* font-size: 2em; */
+    padding-left: 20px;
     text-decoration: none;
 }
 
@@ -302,6 +306,21 @@
     ******************************************  
     ******************************************          
 */
+.home-container {
+    max-width: var(--generalWidth);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+}
+.home-container p{
+    text-align: justify;
+}
+.home-container__title{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: var(--fontSizeTitle);
+    color:var(--blueGeneral);
+}
 
 .contact-container {
     max-width: var(--generalWidth);
@@ -322,11 +341,7 @@
     border: 1px solid red;
 }
 
-@media (min-width: 768px) {
-    .contact-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+
 
 /*
     ******************************************  HERO
@@ -340,7 +355,35 @@
     font-weight: var(--boldLetters);
     text-align: center;
 }
-
+/*
+    ******************************************  Slider/Carrousel
+    ******************************************  
+    ******************************************          
+*/
+.div-slide{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background: var(--blueGeneral);
+    opacity: 0.7!important;
+    padding:25px;
+    border-radius: 10px 10px 10px 10px;
+}
+.div-slide__logo{
+    width: 50px;
+    height: 50px;
+}
+.div-slide__bloque-logo{
+    display: inline-flex;
+    text-transform: uppercase;
+}
+.div-slide__caja-title{
+    font-size: var(--fontSizeSubtitle);
+    color: var(--white);
+    padding-left: 15px;
+}
+.div-slide__link{
+    text-align: center;
+}
 /*
     ******************************************  AVISO LEGAL
     ******************************************  
@@ -401,7 +444,36 @@
     font-weight: var(--boldLetters);
 }
 
+
+.fa-angle-left {
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-225deg);
+}
+
+.fa-angle-right {
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+}
+
+
+/*
+    ******************************************  MEDIA QUERIES
+    ******************************************  
+    ******************************************          
+*/
 @media (min-width: 768px) {
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .home-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .contact__grid {
         grid-template-columns: 1fr 1fr;
     }

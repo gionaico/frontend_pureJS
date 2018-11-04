@@ -86,3 +86,6 @@ body {
     /* alineacion vertical */
     align-items: center;
 }
+.margin-elements{
+    margin-top: 30px;
+}

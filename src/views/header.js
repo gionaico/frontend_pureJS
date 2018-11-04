@@ -2,10 +2,10 @@ let header = function(company) {
     return `
       <div class="header__top">
         <div class="centrado-vertical">
-          <a href="https://www.facebook.com/giovannyINT">
+          <a href="${company.facebook}">
             <img class="header__topIcon" src="./assets/media/facebook.svg" alt="facebook"></img>
           </a>
-          <a href="https://twitter.com/gionaico">
+          <a href="${company.twitter}">
             <img class="header__topIcon" src="./assets/media/twitter.svg" alt="facebook"></img>
           </a>
           <a href="https://plus.google.com/u/0/106766151740944187929">
@@ -17,8 +17,10 @@ let header = function(company) {
         </div>
       </div>
       
-      <div class="header__menu">
-        <a class="header__logo">${company.name}</a>
+      <div class="header__menu .centrado-vertical">
+        <a class="header__logo" href="#home">
+          <img src="${company.logo}" class="header__menu-logo"></img>
+        </a>
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     

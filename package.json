@@ -8,6 +8,7 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "doc": "jsdoc -c jsdoc.json README src/*",
+    "docprueba": "jsdoc ./node_modules/.bin/jsdoc src/*",
     "test": "jest --env=jsdom"
   },
   "author": "",

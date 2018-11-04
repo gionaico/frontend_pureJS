@@ -1,6 +1,5 @@
 // MAIN FUNCTION
 let FgSlider = function (fgContainer) {
-    console.log(2222222222222222222222222, fgContainer)
     this.fgContainer = document.querySelector(`#${fgContainer}`) || document.querySelector('.fg-slider');
     this.setup = arguments[1];
     this.setup && this.setup.parallax ? this.fgContainer.classList.add('fg-parallax') : false;
@@ -24,7 +23,6 @@ let FgSlider = function (fgContainer) {
 
     // run the slider
     this.imageItems();
-    console.log(4545454545454545454)
     // slider setup
 
     // run autoplay by default

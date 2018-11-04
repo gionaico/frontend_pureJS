@@ -7,8 +7,10 @@ function get(url) {
   // Return a new promise.
   return new Promise(function (resolve, reject) {
     if (CACHE_TEMPLATES.has(url)) {
+      console.log("ifififif")
       resolve(CACHE_TEMPLATES.get(url));
     } else {
+      console.log("elseelse")
       // Do the usual XHR stuff
       var req = new XMLHttpRequest();
       req.open('GET', url);
@@ -38,26 +40,6 @@ function get(url) {
 
   });
 }
-
-/* function post(url, data) {
-  return new Promise(function (resolve, reject) {    
-      var req = new XMLHttpRequest();
-      req.open('POST', url);
-      req.onload = function () {
-        if (req.status == 200) {
-          console.log("sfvmnkjfbv")
-          resolve(req.response);
-        } else {
-          console.log(7777777777, req.statusText)
-          reject(Error(req.statusText));
-        }
-      };
-      req.onerror = function () {
-        reject(Error("Network Error"));
-      };
-      req.send(data);
-  });
-} */
 
 function post(url, data) {
   return new Promise(function (resolve, reject) {
