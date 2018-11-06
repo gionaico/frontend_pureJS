@@ -1,7 +1,12 @@
+/**
+ * This is a variable wich contain the router configuration
+ */
+
 var Router = {
     routes: [],
     mode: null,
     root: '/',
+    
     config: function (options) {
         this.mode = options && options.mode && options.mode == 'history' &&
             !!(history.pushState) ? 'history' : 'hash';
@@ -109,4 +114,7 @@ Router.navigate();
 // forwarding
 Router.navigate('/about'); */
 
-export {Router};
+export {
+   
+    Router
+};

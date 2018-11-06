@@ -1,3 +1,5 @@
+/** @module avisoLegal-view */
+
 let view = function (data) {
     return `<div class="avisoLegal-container center-element general-padding">
                 <div>
@@ -16,5 +18,11 @@ let view = function (data) {
 }
 
 export {
+    /**
+     * create the aviso legal view
+     * @function
+     * @param {object} data -At the moment do not recieve nothing
+     * @returns {String} A string with html structure.
+     */
     view
 };

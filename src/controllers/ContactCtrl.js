@@ -1,16 +1,20 @@
 import {get, post} from '../utils';
 import {Settings} from '../settings';
 import {view} from '../views/contact';
-import {hero} from '../views/hero';
+import {hero} from '../views/component/hero';
 import {initMap} from '../utils';
 
+/** Class representing the Contact view. */
 class ContactController {
 
     constructor() {
         
     }
   
-    /** render  */
+    /**
+     * Render in the element with class main the contact wiew.
+     * @return {string-html} Its a string with html structure which will be render.
+     */
     static render() {
 
         let datos_empresa = 

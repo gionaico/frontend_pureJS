@@ -1,3 +1,5 @@
+/** @module footer-view*/
+
 let footer = function(company) {
     return `
       <div class="footer__menu center-inside-elements-flex">
@@ -50,4 +52,12 @@ let footer = function(company) {
       </div>
     `;
 }
-export {footer};
+export {
+  /**
+   * print the contact view
+   * @function
+   * @param {object} company -Its the company information which came from backend.
+   * @returns {String} A string with html structure.
+   */
+  footer
+  };

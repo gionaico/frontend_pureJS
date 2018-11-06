@@ -1,3 +1,5 @@
+/** @module header-view */
+
 let header = function(company) {
     return `
       <div class="header__top">
@@ -35,4 +37,12 @@ let header = function(company) {
         </ul>
       <div>`;
 }
-export {header};
+export {
+  /**
+   * print the contact view
+   * @function
+   * @param {object} company -Its the company information which came from backend.
+   * @returns {String} A string with html structure.
+   */
+  header
+  };

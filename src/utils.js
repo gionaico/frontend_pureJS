@@ -1,3 +1,6 @@
+/**
+ * This is a variable to save data and do not make a request when already it has the information in this variable
+ */
 let CACHE_TEMPLATES = new Map();
 
 // From Jake Archibald's Promises and Back:
@@ -96,8 +99,25 @@ function initMap(data) {
 }
 
 export {
+  /**
+   * get data
+   * @function
+   * @param {String} url -Its a url to connect with the backend.
+   * @returns {object} Data wich came from the backend.
+   */
   get,
   generaTemplate,
+  /**
+   * Print a google-map
+   * @function
+   * @param {String} data -Its the location to insert a marker.
+   */
   initMap,
+  /**
+   * post data
+   * @function
+   * @param {String} url -Its a url to connect with the backend.
+   * @returns {object} Status of the sending of information.
+   */
   post
 };

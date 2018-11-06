@@ -1,3 +1,4 @@
+/** @module slider/carrousel */
 
 let sliderComponent = function (data) {
     
@@ -24,4 +25,12 @@ let sliderComponent = function (data) {
     `;  
 }
 
-export {sliderComponent};
+export {
+    /**
+     * print the carrousel
+     * @function
+     * @param {object} data -Its the information which it use to create the html.
+     * @returns {String} A string with html structure.
+     */
+    sliderComponent
+};

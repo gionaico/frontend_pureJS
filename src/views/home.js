@@ -1,3 +1,5 @@
+/** @module home-view */
+
 let view = function (datos) {
     {/* <div class="h">uno</div>
             <div class="h">dos</div>
@@ -25,4 +27,12 @@ let view = function (datos) {
         `;
 }
 
-export {view};
+export {
+    /**
+     * print the home view
+     * @function
+     * @param {object} datos -Its the home text.
+     * @returns {String} A string with html structure.
+     */
+    view
+    };
