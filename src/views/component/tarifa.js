@@ -1,9 +1,54 @@
 /** @module tarifa/html */
 
-let tarifa = function (tar) {
-    return `
-        <div class="h">${tar.nombretarifa}</div>
-    `;  
+let tarifa = function (tarifas) {
+    console.log("tarifas component", tarifas)
+    let subtarifa= function (array) {
+        return array.map((item, i) => {
+            switch (item.tipo_tarifa) {
+                case 5://tv
+                    return`
+                        <div class="cajaTarifa">
+                            <p class="tituloSubtarifa" >TV</p>
+                            <p class="contenidoSubtarifa">Canales: ${item.subtarifa_num_canales}</p>
+                        </div>`
+                    break;
+                case 4://internet
+                    return`
+                        <div class="cajaTarifa">
+                            <p class="tituloSubtarifa"  id="pWifi">wifi</p>
+                            <p class="contenidoSubtarifa">Vel. subida: ${item.subtarifa_velocidad_conexion_subida}</p>
+                            <p class="contenidoSubtarifa">Vel. bajada: ${item.subtarifa_velocidad_conexion_bajada}</p>
+                        </div>`
+                    break;
+                case 1: //movil
+                    return `
+                        <div class="cajaTarifa">
+                            <p class="tituloSubtarifa" >movil</p>
+                            <p class="contenidoSubtarifa">Precio por minuto: ${item.subtarifa_cent_minuto}$</p>
+                            <p class="contenidoSubtarifa">Est. llamada: ${item.subtarifa_est_llamada}$</p>
+                        </div>`
+                break;
+                default:
+                    return`
+                        <div class="cajaTarifa">
+                        
+                        </div>`
+            }
+        })
+    }
+    let arrayDivs = tarifas.map((item, i) => {
+        return `
+            <div class="cajaTarifaGeneral">
+                <div class="tituloTarifa">
+                    <p class="parrafo parrafoTitle">${item.nombretarifa}</p><br>
+                    <p class="parrafo parrafoSubitle">${item.pretitulo}</p>
+                </div>
+                ${subtarifa(item.subtarifas).join('')}
+            </div>`
+    });
+    
+    return arrayDivs.join('');
+    
 }
 
 export {
@@ -15,3 +60,6 @@ export {
      */
     tarifa
     };
+
+
+  

@@ -20,38 +20,49 @@ class HomeController {
      */
     static render() {
 
-        let datos_empresa = 
+        let cajas_home =
             get(Settings.baseURL+'/home').then(function(response) {           
-                let datosEmpresa=JSON.parse(response);
+                let cajas_home=JSON.parse(response);
                 try{
-                    /* document.getElementById('main').innerHTML = hero("", './assets/media/shop-store.jpg') + view(datosEmpresa); */
-                    /* console.log("datosEmpresa----------------------",datosEmpresa) */
-                    document.getElementById('main').innerHTML = view(datosEmpresa);                  
+                    /* document.getElementById('main').innerHTML = hero("", './assets/media/shop-store.jpg') + view(cajas_home); */
+                    console.log("cajas_home----------------------",cajas_home)
+                    document.getElementById('main').innerHTML = view(cajas_home);                  
                 }catch(e){
                     console.log("error")
                 };
             }).catch(function(error) {
                 console.log("Failed!", error);
             });
-
-
-        let tarifas =
-            get(Settings.baseURL + '/tarifa').then(function (response) {
+        
+        let datos_empresa =
+            get(Settings.baseURL + '/datos_empresa').then(function (response) {
+                let datos_empresa = JSON.parse(response);
                 try {
-                    let tarifas = JSON.parse(response);
-                    console.log ("tarifas",tarifas)
-                    /* let r="";
-                    tarifas.results.forEach(element => {
-                        r=r+tarifa(element)
-                    });
-                    document.getElementById('tarifas-container').innerHTML = r; */
-                    document.getElementById('main').insertAdjacentHTML("afterbegin", sliderComponent(tarifas.results));
+                    /* document.getElementById('main').innerHTML = hero("", './assets/media/shop-store.jpg') + view(datos_empresa); */
+                    console.log("datos_empresa----------------------", datos_empresa.textos)
+                    document.getElementById('main').insertAdjacentHTML("afterbegin", sliderComponent(datos_empresa.textos));
                     new FgSlider('slider-1', {
                         autoplay: false, // autoplay on / off
                         effect: 'slide', // fade, scale, slide, slide-top
                         duration: 10000, // duration till the next slide
                         bullets: true, // show / hide bullets
                     });
+                } catch (e) {
+                    console.log("error")
+                };
+            }).catch(function (error) {
+                console.log("Failed!", error);
+            });
+
+        let tarifas =
+            get(Settings.baseURL + '/tarifa').then(function (response) {
+                try {
+                    let tarifas = JSON.parse(response);
+                    /* console.log ("tarifas",tarifas) */
+                    let tarifasDestacadas = tarifas.results.filter(item => item.destacado != false);
+                    document.getElementById('tarifas-container').innerHTML =tarifa(tarifasDestacadas);
+                    console.log("tarifasDestacadas", tarifasDestacadas)
+                    
                 } catch (e) {
                     console.log("error")
                 };

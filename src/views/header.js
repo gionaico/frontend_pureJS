@@ -4,7 +4,7 @@ let header = function(company) {
     return `
       <div class="header__top">
         <div class="centrado-vertical">
-          <a href="${company.facebook}">
+          <a id="facebook" href="${company.facebook}">
             <img class="header__topIcon" src="./assets/media/facebook.svg" alt="facebook"></img>
           </a>
           <a href="${company.twitter}">

@@ -1,50 +1,107 @@
 const index=require('../src/index.js');
 const $ = require('jquery');
+import {view  as avisoLegal} from '../src/views/avisoLegal';
+import {view  as politicaCookies} from '../src/views/politicaCookies';
+import {view  as home} from '../src/views/home';
+import {view  as contact} from '../src/views/contact';
+import {header} from '../src/views/header';
+import {footer} from '../src/views/footer';
+import {hero} from '../src/views/component/hero';
+import {sliderComponent} from '../src/views/component/slider.componment';
+import {tarifa} from '../src/views/component/tarifa';
 
-beforeEach(()=> {
-    // Set up our document body
-  document.body.innerHTML =
-  '<form>'+
-  '<select id="selectPerson" name="selectPerson">'+  
-  '       <!-- TO FILL --> '+
-  '</select>	<br><br>'+
-  '<div id="operands">'+
-  '  Operand: <input type="number" name="foperand1"><br>'+
-  '</div>'+
-  '<button type="button" id="buttonNewOperand">New operand</button> <br>'+
-  '<br>'+
-  '<select id="selectFunction">'+
-  '       <!-- TO FILL -->'+             
-  '</select>'+	
-  '<br><br>'+
+import {datos} from './datos';
 
-  '<button type="button" id="buttonCalculate">CALCULTATE!</button>'+
-  
-   '</form>'+
-'<h1 id="hResult">Result:</h1>';
 
-function fakeDOMLoaded() {
-  const fakeEvent = document.createEvent('Event');
+beforeEach(() => {
+  // Set up our document body
+  document.body.innerHTML = `
+    <div id="mainFaker">
 
-  fakeEvent.initEvent('DOMContentLoaded', true, true);
-  window.document.dispatchEvent(fakeEvent);
-}
+    <div>`;
+    
+  function fakeDOMLoaded() {
+    const fakeEvent = document.createEvent('Event');
 
-fakeDOMLoaded();
-  
-});
+    fakeEvent.initEvent('DOMContentLoaded', true, true);
+    window.document.dispatchEvent(fakeEvent);
+  }
 
-test('Primer test select Person list html tag is filled first time', () => {
-  expect($('#selectPerson option').length).toBeGreaterThan(0);  
-  expect($('#selectFunction option').length).toBeGreaterThan(0);   
+  fakeDOMLoaded();
 });
 
 
-test('Second test we check adding new operand inputs is working', () => {
-  //At the beginning only one input is present
-  expect($('#operands input').length).toBe(1);
-  // Use jquery to emulate a click on our button  
-  $('#buttonNewOperand').click();
-  //After clicking we get two operand inputs
-  expect($('#operands input').length).toBe(2);
+test('This test check if the ---HEADER--- function return a string and it is using the json data.', () => {
+  let company = datos.company;
+  let headerView = header(company);
+
+  $("#mainFaker").append(headerView);
+  let href = $("#facebook").attr("href");
+  expect(href).toBe(company.facebook);
 });
+
+test('This test check if the ---FOOTER--- function return a string and it is using the json data.', () => {
+  let company = datos.company;
+  let footerView = footer(company);
+
+  $("#mainFaker").append(footerView);
+  let companyName = $("#companyName").html();
+  expect(companyName).toBe(company.name);
+});
+
+test('This test check if the ---HOME--- function return a string and it is using the json data.', () => {
+  let homeLet = datos.home;
+  let homeWiew = home(homeLet);
+
+  $("#mainFaker").append(homeWiew);
+  let homeName = $("#cajaDerTit").html();
+  expect(homeName).toBe(homeLet[0].caja_derecha_titulo);
+});
+
+test('This test check if the ---CONTACT--- function return a string and it is using the json data.', () => {
+  let contactWiew = contact("contactLet");
+
+  $("#mainFaker").append(contactWiew);
+  let contactName = $("#form__button").html();
+  expect(contactName).toBe("Enviar");
+});
+
+
+test('This test check if the ---HERO/COMPONENT--- function return a string and it is using the json data.', () => {
+  let heroCom = hero("titulo de hero", "background:red");
+
+  $("#mainFaker").append(heroCom);
+  let titulo = $(".titleHero").html();
+  expect(titulo).toBe("titulo de hero");
+});
+
+
+test('This test check if the ---SLIDER--- function return a string and it is using the json data.', () => {
+  let datos=[
+    {
+      key:"prueba de envio",
+      img:"url de la imagen"
+    }
+  ];
+  let sliderCom = sliderComponent(datos);
+  $("#mainFaker").append(sliderCom);
+  let titulo = $(".div-slide__caja-title").html();
+  expect(titulo).toBe("envio");
+});
+
+
+test('This test check if the ---TARIFA-VIEW--- function return a string and it is using the json data.', () => {
+
+  let tarifaCom = tarifa(datos.tarifa);
+  $("#mainFaker").append(tarifaCom);
+  let titulo = $("#pWifi").html();
+  expect(titulo).toBe("wifi");
+});
+
+test('This test check if the ---COOKIES-VIEW--- function return a string and it is using the json data.', () => {
+  let politicaCookiesView = politicaCookies("datos");
+  $("#mainFaker").append(politicaCookiesView);
+  let titulo = $(".avisoLegal-container__title").html();
+  expect(titulo).toBe("DATOS GENERALES");
+});
+

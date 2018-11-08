@@ -3,10 +3,12 @@
     ******************************************  
     ******************************************          
 */
-.header__menu-logo{
+
+.header__menu-logo {
     height: 60px;
     width: 120px;
 }
+
 .header__menu {
     display: inline-block;
     width: 100%;
@@ -175,10 +177,12 @@
 .footer__menu-list>a {
     color: var(--white);
 }
-.footer__menu{
+
+.footer__menu {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
 #footer {
     background-color: var(--blueGeneral);
     margin-top: 30px;
@@ -306,20 +310,23 @@
     ******************************************  
     ******************************************          
 */
+
 .home-container {
     max-width: var(--generalWidth);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;
 }
-.home-container p{
+
+.home-container p {
     text-align: justify;
 }
-.home-container__title{
+
+.home-container__title {
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: var(--fontSizeTitle);
-    color:var(--blueGeneral);
+    color: var(--blueGeneral);
 }
 
 .contact-container {
@@ -336,12 +343,47 @@
     gap: 50px;
 }
 
-.h {
-    height: 100px;
+.cajaTarifa {
     border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
 }
 
+.cajaTarifaGeneral {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.tituloTarifa {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.parrafoTitle {
+    color: var(--blueGeneral);
+    font-size: var(--fontSizeSubtitle);
+    font-weight: var(--boldLetters);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.tituloSubtarifa {
+    color: var(--blueGeneral);
+    font-size: var(--fontSizeText);
+    font-weight: var(--boldLetters);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contenidoSubtarifa {
+    padding: 2px 10px 2px 10px;
+}
 
 /*
     ******************************************  HERO
@@ -355,35 +397,42 @@
     font-weight: var(--boldLetters);
     text-align: center;
 }
+
 /*
     ******************************************  Slider/Carrousel
     ******************************************  
     ******************************************          
 */
-.div-slide{
+
+.div-slide {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     background: var(--blueGeneral);
     opacity: 0.7!important;
-    padding:25px;
+    padding: 25px;
     border-radius: 10px 10px 10px 10px;
 }
-.div-slide__logo{
+
+.div-slide__logo {
     width: 50px;
     height: 50px;
 }
-.div-slide__bloque-logo{
+
+.div-slide__bloque-logo {
     display: inline-flex;
     text-transform: uppercase;
 }
-.div-slide__caja-title{
+
+.div-slide__caja-title {
     font-size: var(--fontSizeSubtitle);
     color: var(--white);
     padding-left: 15px;
 }
-.div-slide__link{
+
+.div-slide__link {
     text-align: center;
 }
+
 /*
     ******************************************  AVISO LEGAL
     ******************************************  
@@ -396,15 +445,18 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
-.avisoLegal-container__title{
-    color:var(--blueGeneral);
+
+.avisoLegal-container__title {
+    color: var(--blueGeneral);
     font-weight: var(--boldLetters);
 }
+
 .avisoLegal-container__p-espacios {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: justify;
 }
+
 /*
     ******************************************  CONTACT
     ******************************************  
@@ -444,7 +496,6 @@
     font-weight: var(--boldLetters);
 }
 
-
 .fa-angle-left {
     border-right: 4px solid black;
     border-bottom: 4px solid black;
@@ -461,12 +512,12 @@
     transform: rotate(-45deg);
 }
 
-
 /*
     ******************************************  MEDIA QUERIES
     ******************************************  
     ******************************************          
 */
+
 @media (min-width: 768px) {
     .contact-container {
         grid-template-columns: repeat(2, 1fr);

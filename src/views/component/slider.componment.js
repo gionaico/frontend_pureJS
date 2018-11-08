@@ -3,17 +3,17 @@
 let sliderComponent = function (data) {
     
     let arrayDivs=data.map((item, i) => {
+        /* <div class="div-slide__logo" style="background-image: url('${item.image}')"></div>     tras segunda linea*/
         return `
             <div class="fg-content div-slide text-center">
                 <div class="div-slide__bloque-logo">
-                    <div class="div-slide__logo" style="background-image: url('${item.logo}')"></div>
-                    <div class="div-slide__caja-title">${item.nombretarifa}</div>
+                    <div id="title_slider" class="div-slide__caja-title">${item.key.substring(10)}</div>
                 </div>    
                 <a href="#about-me" class="div-slide__link">
                     Link a la tarifa
                 </a>
             </div>
-            <img src="./assets/media/${item.slug}.jpg" alt="">`
+            <img src="${item.image}" alt="">`
     });
 
     let divs=arrayDivs.join('');

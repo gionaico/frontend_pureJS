@@ -25,10 +25,10 @@ let footer = function(company) {
       <div class="footer__grid">
         <div class="footer__elem1">
           <div class="footer__elemsTitle">
-            <p>${company.name} S.L.</p>
+            <p>${company.name} S.L..</p>
           </div>
           <div>
-            <div>${company.name}</div>
+            <div id="companyName">${company.name}</div>
             <div>${company.address},</div>
             <div>${company.zipcode} ${company.city}, ${company.province}, ${company.country}.</div>
             <div>${company.name}@info.com</div>

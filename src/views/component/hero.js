@@ -6,7 +6,7 @@ let hero= function(title, grad, img=null){
     }
         return `
             <div class="banner ${grad} center-inside-elements-flex" >
-                <div class="titleHero ">${title}</div>
+                <div class="titleHero">${title}</div>
             </div>`;
 };
 export {

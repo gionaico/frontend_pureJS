@@ -9,7 +9,9 @@
     "build": "webpack --mode production",
     "doc": "jsdoc -c jsdoc.json README.md src/*",
     "docprueba": "jsdoc ./node_modules/.bin/jsdoc src/*",
-    "test": "jest --env=jsdom"
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",

@@ -6,10 +6,8 @@ import {hero} from '../views/component/hero';
 /** Class representing the AvisoLegal view. */
 class AvisoLegalController {
 
-    constructor() {
-        
-    }
-  
+    constructor() {        
+    }  
     /**
      * Render in the element with class main the AvisoLegal wiew.
      * @return {string-html} Its a string with html structure which will be render.
