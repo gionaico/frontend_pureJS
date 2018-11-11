@@ -3,13 +3,15 @@ import {Settings} from './settings';
 /**
  * This is a variable to save data and do not make a request when already it has the information in this variable
  */
-let CACHE_TEMPLATES = new Map();
-
 
 function checkLocalStorage() {
   let local = localStorage.getItem("templeates");
   try {    
-    return JSON.parse(local);
+    if (typeof(JSON.parse(local))==="string") {
+      return JSON.parse(local);
+    }
+    localStorage.setItem("templeates", JSON.stringify([]))
+    return [];
   } catch (error) {
     localStorage.setItem("templeates", JSON.stringify([]))
     return [];
@@ -36,7 +38,7 @@ function setLocalStorage(array, newObj) {
   }
   
 }
-/* localStorage.setItem('miGato', 'Juan'); */
+
 function get(url) {
   /* console.log("localStorage", url, checkLocalStorage()); */
   // Return a new promise.

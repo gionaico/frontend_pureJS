@@ -1,14 +1,14 @@
 const index=require('../src/index.js');
 const $ = require('jquery');
-import {view  as avisoLegal} from '../src/views/avisoLegal';
-import {view  as politicaCookies} from '../src/views/politicaCookies';
-import {view  as home} from '../src/views/home';
+
+import {view  as home} from '../src/views/cajas-home';
 import {view  as contact} from '../src/views/contact';
 import {header} from '../src/views/header';
 import {footer} from '../src/views/footer';
-import {hero} from '../src/views/component/hero';
-import {sliderComponent} from '../src/views/component/slider.componment';
-import {tarifa} from '../src/views/component/tarifa';
+
+import {hero} from '../src/component/common/hero.component';
+import {tarifa} from '../src/component/common/tarifa.component';
+import {sliderComponent} from '../src/component/common/slider.component';
 
 import {datos} from './datos';
 
@@ -98,10 +98,10 @@ test('This test check if the ---TARIFA-VIEW--- function return a string and it i
   expect(titulo).toBe("wifi");
 });
 
-test('This test check if the ---COOKIES-VIEW--- function return a string and it is using the json data.', () => {
+/* test('This test check if the ---COOKIES-VIEW--- function return a string and it is using the json data.', () => {
   let politicaCookiesView = politicaCookies("datos");
   $("#mainFaker").append(politicaCookiesView);
   let titulo = $(".avisoLegal-container__title").html();
   expect(titulo).toBe("DATOS GENERALES");
 });
-
+ */

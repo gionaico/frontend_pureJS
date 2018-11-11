@@ -1,8 +1,8 @@
 const index = require('../src/index.js');
 const $ = require('jquery');
-import PoliticaCookiesController from '../src/controllers/PoliticaCookiesCtrl';
+import PoliticaCookiesController from '../src/component/PoliticaCookies.component';
 
-jest.mock('../src/controllers/PoliticaCookiesCtrl'); // HomeController is now a mock constructor
+jest.mock('../src/component/PoliticaCookies.component'); // HomeController is now a mock constructor
 
 beforeEach(() => {
     PoliticaCookiesController.mockClear();

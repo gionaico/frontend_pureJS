@@ -1,8 +1,8 @@
 const index = require('../src/index.js');
 const $ = require('jquery');
-import HomeController from '../src/controllers/HomeCtrl';
+import HomeController from '../src/component/Home.component';
 
-jest.mock('../src/controllers/HomeCtrl'); // HomeController is now a mock constructor
+jest.mock('../src/component/Home.component'); // HomeController is now a mock constructor
 
 beforeEach(() => {
     HomeController.mockClear();

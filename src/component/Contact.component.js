@@ -1,5 +1,5 @@
 import {view} from '../views/contact';
-import {hero} from '../views/component/hero';
+import {hero} from './common/hero.component';
 import {validation, cleanError} from '../utils';
 
 /** Class representing the Contact view. */

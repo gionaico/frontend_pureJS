@@ -1,8 +1,7 @@
-import {view} from '../views/home';
-import { tarifa } from '../views/component/tarifa';
-import { sliderComponent } from '../views/component/slider.componment';
+import {view} from '../views/cajas-home';
+import { tarifa } from './common/tarifa.component';
+import { sliderComponent } from './common/slider.component';
 import { FgSlider } from '../classes/Slider.class';
-
 
 /** Class representing the Home view. */
 export default class HomeController {
@@ -34,7 +33,6 @@ export default class HomeController {
     render() {
         return `
             ${sliderComponent(this._sliderElements )}
-
             <div class="tarifas-container center-element margin-elements" id="tarifas-container">        
                 ${tarifa(this._tarifas)}
             </div>

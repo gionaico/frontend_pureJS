@@ -11,6 +11,7 @@ var Router = {
         this.mode = options && options.mode && options.mode == 'history' &&
             !!(history.pushState) ? 'history' : 'hash';
         this.root = options && options.root ? '/' + this.clearSlashes(options.root) + '/' : '/';
+        console.log("config---------", this)
         return this;
     },
     getFragment: function () {
@@ -26,6 +27,7 @@ var Router = {
         return this.clearSlashes(fragment);
     },
     clearSlashes: function (path) {
+        
         return path.toString().replace(/\/$/, '').replace(/^\//, '');
     },
     add: function (re, handler) {
@@ -37,6 +39,8 @@ var Router = {
             re: re,
             handler: handler
         });
+        /* console.log(re, "--------------------------", handler, "this--------------------------", this) */
+        
         return this;
     },
     remove: function (param) {
@@ -48,12 +52,12 @@ var Router = {
         }
         return this;
     },
-    flush: function () {
+    /* flush: function () {
         this.routes = [];
         this.mode = null;
         this.root = '/';
         return this;
-    },
+    }, */
     check: function (f) {
         var fragment = f || this.getFragment();
         for (var i = 0; i < this.routes.length; i++) {
@@ -84,8 +88,10 @@ var Router = {
         if (this.mode === 'history') {
             history.pushState(null, null, this.root + this.clearSlashes(path));
         } else {
+            console.log("bajo")
             window.location.href = window.location.href.replace(/#(.*)$/, '') + '#' + path;
         }
+        console.log("navigate: function-------", this)
         return this;
     }
 }

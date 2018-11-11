@@ -1,13 +1,12 @@
 import {Router} from './router.js'; //Knows what to do for every single URL 
-import HomeController from './controllers/HomeCtrl';
-import ContactController from './controllers/ContactCtrl';
-import AvisoLegalController from './controllers/AvisoLegalCtrl';
-import PoliticaCookiesController from './controllers/PoliticaCookiesCtrl';
+import HomeController from './component/Home.component';
+import ContactController from './component/Contact.component';
+import AvisoLegalController from './component/AvisoLegal.component';
+import PoliticaCookiesController from './component/PoliticaCookies.component';
 import {header} from './views/header';
 import {footer} from './views/footer';
 import {get, initMap} from './utils';
-/* Settings sustituye a hotBase como ruta hacia backend */
-import {Settings} from './settings';
+
 
 Router
   .add(/contact/, function () {
@@ -15,11 +14,11 @@ Router
   })
   .add(/cookies/, function () {
     console.log("cookies");
-    PoliticaCookiesController.render();
+    new PoliticaCookiesController();
   })
   .add(/avisoLegal/, function () {
     console.log("avisoLegal");
-    AvisoLegalController.render();
+    new AvisoLegalController();
   }).listen()
   .add(/products\/(.*)\/edit\/(.*)/, function () {
     console.log('products', arguments);
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
   /*console.log("values-------------",  p); */
   }).catch(reason => {
-    console.log("reason--------", reason)
+    console.log("reasonInicial--------", reason)
   });
 });
 
@@ -65,12 +64,12 @@ function homeView(){
     });
     new HomeController({
       cajas_home: array[0],
-      sliderElements: array[1].textos,
+      sliderElements: array[1].textos.filter(item => item.key.substring(0, 9) === "jumbotron"),
       tarifas: array[2].results.filter(item => item.destacado != false)
     });
     /*console.log("values-------------",  p); */
   }).catch(reason => {
-    console.log("reason--------", reason)
+    console.log("reasonhome--------", reason)
   });
 }
 
