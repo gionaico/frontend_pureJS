@@ -27,15 +27,19 @@
     --blueGeneral: #363949;
     --texColor: #888888;
     --gris-claro: #f9f9f9;
-    --gradient_1: #13547a;
-    --gradient_2: #80d0c7;
+    --grad1: #ffe000;
+    --grad2: #e94057;
+    --grad3: #8a2387;
+    --error: #DC3545;
+    --errorBg: #F2DEDE;
+
     /*
     * Sizes
     * ======================================================================== */
     --generalWidth: 1000px;
     --mediumWidth: 500px;
     --smallWidth: 250px;
-    --iconSize: 85px;
+    --iconSize: 30px;
     --fontSizeTitle: 3.3rem;
     --fontSizeSubtitle: 2.3rem;
     --fontSizeText: 1.3rem;
@@ -80,7 +84,7 @@ body {
 }
 
 .grad {
-    background-image: linear-gradient(to bottom right, var(--gradient_1), var(--gradient_2));
+     background-image: linear-gradient(to bottom right, var(--grad1), var(--grad2), var(--grad3));
 }
 
 .fg-slider {
@@ -94,4 +98,13 @@ body {
 
 .margin-elements {
     margin-top: 30px;
+}
+
+.form-error {
+    border: 1px solid var(--red);
+    background-color: var(--errorBg)
+}
+
+.icon-size{
+    height: var(--iconSize);
 }

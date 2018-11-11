@@ -1,61 +1,44 @@
-import {get, post} from '../utils';
-import {Settings} from '../settings';
 import {view} from '../views/contact';
 import {hero} from '../views/component/hero';
-import {initMap} from '../utils';
+import {validation, cleanError} from '../utils';
 
 /** Class representing the Contact view. */
 class ContactController {
 
-    constructor() {
-        
+    constructor(obj) {
+        this._datosEmpresa = obj.datosEmpresa;
+        try {
+            document.getElementById("main").innerHTML = this.render();
+            document.querySelector("#form__button").addEventListener("click", function (e) {
+                let dat = {
+                    nombre: document.getElementById("nombre").value,
+                    tlf: document.getElementById("tlf").value,
+                    email: document.getElementById("email").value,
+                    comentario: document.getElementById("comentario").value,
+                }
+                if (validation(dat)) {
+                    alert("Tus mensaje a sido enviado");
+                }
+                
+            }, false);
+            cleanError("contact-data");
+            
+        } catch (e) {
+            console.log("error ctrl HOME", e)
+        };
     }
+
+  
   
     /**
      * Render in the element with class main the contact wiew.
      * @return {string-html} Its a string with html structure which will be render.
      */
-    static render() {
-
-        let datos_empresa = 
-            get(Settings.baseURL + '/datos_empresa').then(function (response) {
-                let datosEmpresa=JSON.parse(response);
-                try{
-                    document.getElementById('main').innerHTML = hero("CONTACT", "grad") + view(datosEmpresa);
-                    initMap(datosEmpresa);
-
-                    let a1 = document.querySelector("#form__button").addEventListener("click", function (e) {
-                        /* console.log("item", e)
-                        console.log(e.target.getAttribute("name")) */
-                        let datos = document.getElementsByClassName("form__dato")
-                        console.log("datos[0]",datos[0].value)
-                        console.log("datos[1]", datos[1].value)
-                        console.log("datos[2]", datos[2].value)
-                        console.log(datos.length)
-
-                        let dat={
-                            nombre:datos[0].value,
-                            description: datos[1].value,
-                            email: datos[2].value,
-                            telefono: datos[3].value,
-                        }
-                        post(Settings.baseURL + '/contacto',dat ).then(function (response) {
-                            console.log(response)
-                        }).catch(function (error) {
-                            console.log("Failed!", error);
-                        });
-
-                        alert("click")
-                    }, false);
-                }catch(e){
-                    console.log("error")
-                };
-            }).catch(function(error) {
-                console.log("Failed!", error);
-            });
-
-        
-       
+    render() {
+        return `
+            ${hero("CONTACT", "grad")}
+            ${view(this._datosEmpresa)}            
+            `                    
     }
 }
 

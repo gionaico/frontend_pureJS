@@ -5,14 +5,13 @@ import AvisoLegalController from './controllers/AvisoLegalCtrl';
 import PoliticaCookiesController from './controllers/PoliticaCookiesCtrl';
 import {header} from './views/header';
 import {footer} from './views/footer';
-import {get} from './utils';
+import {get, initMap} from './utils';
 /* Settings sustituye a hotBase como ruta hacia backend */
 import {Settings} from './settings';
 
 Router
   .add(/contact/, function () {
-    console.log("Contact");
-    ContactController.render();
+    contactView();
   })
   .add(/cookies/, function () {
     console.log("cookies");
@@ -29,22 +28,64 @@ Router
     console.log('products', arguments);
   })
   .add(function () {
-    console.log('default');
-    HomeController.render();
-});
-console.log(Router)
-HomeController.render();
-
-
-let d = get(Settings.baseURL + '/datos_empresa').then(function (response) {
-  let datosEmpresa = JSON.parse(response);
-  console.log("datosEmpresa-----------",datosEmpresa);
-  document.querySelector('header').innerHTML = header(datosEmpresa);
-  document.querySelector('footer').innerHTML = footer(datosEmpresa);
-}).catch(function (error) {
-  console.log("Failed!", error);
+    homeView();
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {  
+  Promise.all([get("/home/"), get("/datos_empresa/"), get("/tarifa/")]).then(values => {
+    let array=[];
+    values.forEach(element => {
+      array.push(JSON.parse(element))
+    });
+    document.querySelector('header').innerHTML = header(array[1]);
+    document.querySelector('footer').innerHTML = footer(array[1]);
+    
+    new HomeController({
+          cajas_home: array[0],
+          sliderElements: array[1].textos,
+          tarifas: array[2].results.filter(item => item.destacado != false)
+          });
+  /*console.log("values-------------",  p); */
+  }).catch(reason => {
+    console.log("reason--------", reason)
+  });
+});
+
+
+
+
+
+function homeView(){
+  alert('homeView');
+  Promise.all([get("/home/"), get("/datos_empresa/"), get("/tarifa/")]).then(values => {
+    let array = [];
+    values.forEach(element => {
+      array.push(JSON.parse(element))
+    });
+    new HomeController({
+      cajas_home: array[0],
+      sliderElements: array[1].textos,
+      tarifas: array[2].results.filter(item => item.destacado != false)
+    });
+    /*console.log("values-------------",  p); */
+  }).catch(reason => {
+    console.log("reason--------", reason)
+  });
+}
+
+function contactView() {
+  alert('homeView');
+  get('/datos_empresa/').then(function (response) {
+    console.log("funcion contact ")
+    new ContactController({
+      datosEmpresa:JSON.parse(response)
+    });
+    initMap(JSON.parse(response));
+  }).catch(function (error) {
+    console.log("Failed! contact", error);
+  });
+}
 
 
 

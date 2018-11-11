@@ -1,29 +1,68 @@
+import {Settings} from './settings';
+
 /**
  * This is a variable to save data and do not make a request when already it has the information in this variable
  */
 let CACHE_TEMPLATES = new Map();
 
-// From Jake Archibald's Promises and Back:
-// http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promisifying-xmlhttprequest
 
+function checkLocalStorage() {
+  let local = localStorage.getItem("templeates");
+  try {    
+    return JSON.parse(local);
+  } catch (error) {
+    localStorage.setItem("templeates", JSON.stringify([]))
+    return [];
+  }
+}
+
+function setLocalStorage(array, newObj) {
+  let arrayFiltrado = array.filter(item => item.url === newObj.url);
+  console.log(111111111111, arrayFiltrado, array)
+  let nuevoArr=[];
+  if (arrayFiltrado.length>0) {
+    array.forEach(element => {
+      if (element.url===newObj.url) {
+        element.contenido = newObj.contenido
+      }
+      nuevoArr.push(element)
+    });    
+    console.log("if")
+    localStorage.setItem("templeates", JSON.stringify(nuevoArr));
+  }else{
+    array.push(newObj)
+    console.log("else", array)
+    localStorage.setItem("templeates", JSON.stringify(array));
+  }
+  
+}
+/* localStorage.setItem('miGato', 'Juan'); */
 function get(url) {
+  /* console.log("localStorage", url, checkLocalStorage()); */
   // Return a new promise.
+  let local= checkLocalStorage()
+  console.log("lllllllllllllllllllllllllllllll",local)
   return new Promise(function (resolve, reject) {
-    if (CACHE_TEMPLATES.has(url)) {
-      console.log("ifififif")
-      resolve(CACHE_TEMPLATES.get(url));
+    let ar = local.filter(item => item.url === url)
+    if (ar.length > 0) {
+      console.log("CACHE", local)
+      resolve(ar[0].contenido);
     } else {
-      console.log("elseelse")
+      console.log("fuera cache", local)
       // Do the usual XHR stuff
       var req = new XMLHttpRequest();
-      req.open('GET', url);
+      req.open('GET', Settings.baseURL+url);
 
       req.onload = function () {
         // This is called even on 404 etc
         // so check the status
         if (req.status == 200) {
           // Resolve the promise with the response text
-          CACHE_TEMPLATES.set(url, req.response);
+          /* console.log(req.response) */
+          setLocalStorage(local, {
+            url: url,
+            contenido: req.response
+          });
           resolve(req.response);
         } else {
           // Otherwise reject with the status text
@@ -98,6 +137,26 @@ function initMap(data) {
   });
 }
 
+function validation(dat) {
+  for (const prop in dat) {
+    if (`${dat[prop]}` === undefined || `${dat[prop]}`.length < 3) {
+      document.getElementById(`${prop}`).classList.add("form-error");
+      document.getElementById(`${prop}`).focus();
+      return false
+    }
+  }
+  return true
+}
+
+function cleanError(name) {
+  let pe = document.getElementsByName(`${name}`);
+  pe.forEach((el) => {
+    el.addEventListener('keydown', (e) => {
+      document.querySelector(`#${e.target.id}`).classList.remove("form-error");
+    });
+  });
+}
+
 export {
   /**
    * get data
@@ -106,6 +165,8 @@ export {
    * @returns {object} Data wich came from the backend.
    */
   get,
+  validation,
+  cleanError,
   generaTemplate,
   /**
    * Print a google-map
