@@ -14,8 +14,10 @@ let header = function(company) {
             <img class="header__topIcon" src="./assets/media/google-plus.svg" alt="facebook"></img>
           </a>
         </div>
-        <div>
-            
+
+        <div class="header__top-language">
+            <img class="header__topIcon margin_lng-icons pointer" src="./assets/media/lng/es.svg" alt="spanish"></img>
+            <img class="header__topIcon margin_lng-icons pointer" src="./assets/media/lng/ca.svg" alt="catalan"></img>
         </div>
       </div>
       
@@ -30,10 +32,15 @@ let header = function(company) {
           <li id="goHome" name="home" class="goTo pointer nav-item">
             <a class="nav-link" name="home" href="#home">Home</a>
           </li>
+          
+          <li id="goTarifas" name="tarifas" class="goTo pointer nav-item">
+            <a class="nav-link" name="tarifas" href="#contact">Tarifas</a>
+          </li>
     
           <li id="goContact" name="contact" class="goTo pointer nav-item">
             <a class="nav-link" name="contact" href="#contact">Contact</a>
           </li>
+
         </ul>
       <div>`;
 }

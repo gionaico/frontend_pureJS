@@ -3,52 +3,50 @@ import {Settings} from './settings';
 /**
  * This is a variable to save data and do not make a request when already it has the information in this variable
  */
+function resetLocalStorage(local_name, array=[]) {
+  localStorage.setItem(local_name, JSON.stringify(array))
+}
 
 function checkLocalStorage() {
-  let local = localStorage.getItem("templeates");
   try {    
-    if (typeof(JSON.parse(local))==="string") {
+    let local = localStorage.getItem("templeates");
+    if (JSON.parse(local)) 
       return JSON.parse(local);
-    }
-    localStorage.setItem("templeates", JSON.stringify([]))
+    /* resetLocalStorage("templeates"); */
     return [];
   } catch (error) {
-    localStorage.setItem("templeates", JSON.stringify([]))
+    /* resetLocalStorage("templeates"); */
     return [];
   }
 }
 
-function setLocalStorage(array, newObj) {
-  let arrayFiltrado = array.filter(item => item.url === newObj.url);
-  console.log(111111111111, arrayFiltrado, array)
-  let nuevoArr=[];
+function setLocalStorage(oldLocalObj, newLocalObj) {
+  let arrayFiltrado = oldLocalObj.filter(item => item.url === newLocalObj.url);
+  let nuevo=[];
+
   if (arrayFiltrado.length>0) {
-    array.forEach(element => {
-      if (element.url===newObj.url) {
-        element.contenido = newObj.contenido
+    oldLocalObj.forEach(element => {
+      if (elem.url===newLocalObj.url) {
+        elem.contenido = newLocalObj.contenido
       }
-      nuevoArr.push(element)
+      nuevo.push(elem)
     });    
-    console.log("if")
-    localStorage.setItem("templeates", JSON.stringify(nuevoArr));
+    resetLocalStorage("templeates", nuevo);
   }else{
-    array.push(newObj)
-    console.log("else", array)
-    localStorage.setItem("templeates", JSON.stringify(array));
+    oldLocalObj.push(newLocalObj)
+    resetLocalStorage("templeates", oldLocalObj)
   }
   
 }
 
 function get(url) {
-  /* console.log("localStorage", url, checkLocalStorage()); */
-  // Return a new promise.
   let local= checkLocalStorage()
-  console.log("lllllllllllllllllllllllllllllll",local)
+
   return new Promise(function (resolve, reject) {
-    let ar = local.filter(item => item.url === url)
-    if (ar.length > 0) {
+    let filterRoute = local.filter(item => item.url === url)
+    if (filterRoute.length > 0) {
       console.log("CACHE", local)
-      resolve(ar[0].contenido);
+      resolve(filterRoute[0].contenido);
     } else {
       console.log("fuera cache", local)
       // Do the usual XHR stuff
@@ -56,28 +54,23 @@ function get(url) {
       req.open('GET', Settings.baseURL+url);
 
       req.onload = function () {
-        // This is called even on 404 etc
-        // so check the status
+        // This is called even on 404 etc so check the status
         if (req.status == 200) {
           // Resolve the promise with the response text
-          /* console.log(req.response) */
           setLocalStorage(local, {
             url: url,
             contenido: req.response
           });
           resolve(req.response);
         } else {
-          // Otherwise reject with the status text
-          // which will hopefully be a meaningful error
+          // Otherwise reject with the status text --- which will hopefully be a meaningful error
           reject(Error(req.statusText));
         }
       };
-
       // Handle network errors
       req.onerror = function () {
         reject(Error("Network Error"));
       };
-
       // Make the request
       req.send();
     }

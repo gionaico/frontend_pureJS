@@ -11,7 +11,7 @@ var Router = {
         this.mode = options && options.mode && options.mode == 'history' &&
             !!(history.pushState) ? 'history' : 'hash';
         this.root = options && options.root ? '/' + this.clearSlashes(options.root) + '/' : '/';
-        console.log("config---------", this)
+        /* console.log("config---------", this) */
         return this;
     },
     getFragment: function () {
@@ -88,10 +88,10 @@ var Router = {
         if (this.mode === 'history') {
             history.pushState(null, null, this.root + this.clearSlashes(path));
         } else {
-            console.log("bajo")
+            /* console.log("bajo") */
             window.location.href = window.location.href.replace(/#(.*)$/, '') + '#' + path;
         }
-        console.log("navigate: function-------", this)
+        /* console.log("navigate: function-------", this) */
         return this;
     }
 }

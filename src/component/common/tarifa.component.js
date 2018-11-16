@@ -1,7 +1,7 @@
 /** @module tarifa/html */
 
 let tarifa = function (tarifas) {
-    console.log("tarifas component", tarifas)
+    /* console.log("tarifas component", tarifas) */
     let subtarifa= function (array) {
         return array.map((item, i) => {
             switch (item.tipo_tarifa) {

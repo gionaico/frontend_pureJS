@@ -3,7 +3,14 @@
     ******************************************  
     ******************************************          
 */
-
+.header__top-language{
+    display:flex;
+    justify-content: end;
+    align-items: center;
+}
+.margin_lng-icons{
+    margin-right: 20px;
+}
 .header__menu-logo {
     height: 60px;
     width: 120px;
@@ -289,9 +296,6 @@
     max-width: 200px
 } */
 
-.pointer {
-    cursor: pointer;
-}
 
 .banner {
     background-attachment: fixed;

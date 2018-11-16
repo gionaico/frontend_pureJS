@@ -13,11 +13,11 @@ Router
     contactView();
   })
   .add(/cookies/, function () {
-    console.log("cookies");
+    /* console.log("cookies"); */
     new PoliticaCookiesController();
   })
   .add(/avisoLegal/, function () {
-    console.log("avisoLegal");
+    /* console.log("avisoLegal"); */
     new AvisoLegalController();
   }).listen()
   .add(/products\/(.*)\/edit\/(.*)/, function () {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function homeView(){
-  alert('homeView');
+  /* alert('homeView'); */
   Promise.all([get("/home/"), get("/datos_empresa/"), get("/tarifa/")]).then(values => {
     let array = [];
     values.forEach(element => {
@@ -69,12 +69,12 @@ function homeView(){
     });
     /*console.log("values-------------",  p); */
   }).catch(reason => {
-    console.log("reasonhome--------", reason)
+    console.log("Failed! Home View", reason)
   });
 }
 
 function contactView() {
-  alert('homeView');
+  /* alert('contactView'); */
   get('/datos_empresa/').then(function (response) {
     console.log("funcion contact ")
     new ContactController({
@@ -82,7 +82,7 @@ function contactView() {
     });
     initMap(JSON.parse(response));
   }).catch(function (error) {
-    console.log("Failed! contact", error);
+    console.log("Failed! Contact View", error);
   });
 }
 

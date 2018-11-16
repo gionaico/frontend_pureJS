@@ -54,6 +54,9 @@
 a {
     cursor: pointer;
 }
+.pointer {
+    cursor: pointer;
+}
 
 body {
     background-color: var(--bodyBg);
