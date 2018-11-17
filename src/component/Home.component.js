@@ -2,27 +2,24 @@ import {view} from '../views/cajas-home';
 import { tarifa } from './common/tarifa.component';
 import { sliderComponent } from './common/slider.component';
 import { FgSlider } from '../classes/Slider.class';
+import ViewComponent from "../classes/ViewComponent.class";
 
 /** Class representing the Home view. */
-export default class HomeController {
+export default class HomeController extends ViewComponent {
 
     constructor(obj) {
         /* console.log(obj) */
+        super()
         this._cajas_home = obj.cajas_home;
         this._sliderElements = obj.sliderElements;
         this._tarifas = obj.tarifas;
-    
-        try {
-            document.getElementById("main").innerHTML = this.render();
-            new FgSlider('slider-1', {
-                autoplay: false, // autoplay on / off
-                effect: 'slide', // fade, scale, slide, slide-top
-                duration: 10000, // duration till the next slide
-                bullets: true, // show / hide bullets
-            });
-        } catch (e) {
-            console.log("error ctrl HOME", e)
-        };
+        super.buildHtml(this.render(), "main", "home");
+        new FgSlider('slider-1', {
+            autoplay: false, // autoplay on / off
+            effect: 'slide', // fade, scale, slide, slide-top
+            duration: 10000, // duration till the next slide
+            bullets: true, // show / hide bullets
+        });
     }  
     
     

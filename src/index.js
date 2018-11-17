@@ -1,6 +1,7 @@
 import {Router} from './router.js'; //Knows what to do for every single URL 
 import HomeController from './component/Home.component';
 import ContactController from './component/Contact.component';
+import TarifasController from './component/Tarifas.component';
 import AvisoLegalController from './component/AvisoLegal.component';
 import PoliticaCookiesController from './component/PoliticaCookies.component';
 import {header} from './views/header';
@@ -15,6 +16,10 @@ Router
   .add(/cookies/, function () {
     /* console.log("cookies"); */
     new PoliticaCookiesController();
+  })
+  .add(/tarifas/, function () {
+    /* console.log("cookies"); */
+    new TarifasController({oye:"nice"});
   })
   .add(/avisoLegal/, function () {
     /* console.log("avisoLegal"); */

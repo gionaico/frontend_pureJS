@@ -34,7 +34,7 @@ let header = function(company) {
           </li>
           
           <li id="goTarifas" name="tarifas" class="goTo pointer nav-item">
-            <a class="nav-link" name="tarifas" href="#contact">Tarifas</a>
+            <a class="nav-link" name="tarifas" href="#tarifas">Tarifas</a>
           </li>
     
           <li id="goContact" name="contact" class="goTo pointer nav-item">

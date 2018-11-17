@@ -3,6 +3,18 @@ import {Settings} from './settings';
 /**
  * This is a variable to save data and do not make a request when already it has the information in this variable
  */
+function createCookie(key, value, exp=5) {
+    let fecha = new Date();
+    fecha.setFullYear(fecha.getFullYear() + exp);
+    /* document.cookie = `lng=eng; expires=${fecha.toString()}`; */
+    document.cookie = `${key}=${value}; expires=${fecha.toString()}`;
+}
+
+function readCookie(name) {
+  return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+}
+
+
 function resetLocalStorage(local_name, array=[]) {
   localStorage.setItem(local_name, JSON.stringify(array))
 }
@@ -152,6 +164,27 @@ function cleanError(name) {
   });
 }
 
+function getCookie(name) {
+  let value = "; " + document.cookie;
+  let parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+function getCookie2(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 export {
   /**
    * get data
