@@ -1,15 +1,12 @@
 import {hero} from './common/hero.component';
+import ViewComponent from "../classes/ViewComponent.class";
 
 /** Class representing the AvisoLegal view. */
-class AvisoLegalController {
+class AvisoLegalController extends ViewComponent {
 
     constructor() {
-        try {
-            document.getElementById("main").innerHTML = this.render();
-
-        } catch (e) {
-            console.log("error ctrl HOME", e)
-        };
+        super()
+        super.buildHtml(this.render(), "main", "AvisoLegalController");
     }
     /**
      * Render in the element with class main the AvisoLegal wiew.

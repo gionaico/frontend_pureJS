@@ -1,15 +1,12 @@
 import {hero} from './common/hero.component';
+import ViewComponent from "../classes/ViewComponent.class";
 
 /** Class representing the PoliticaCookies view. */
-class PoliticaCookiesController {
+class PoliticaCookiesController extends ViewComponent {
 
     constructor() {
-        try {
-            document.getElementById("main").innerHTML = this.render();
-
-        } catch (e) {
-            console.log("error ctrl HOME", e)
-        };
+        super()
+        super.buildHtml(this.render(), "main", "PoliticaCookiesController");
     }
   
     /**

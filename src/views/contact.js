@@ -9,7 +9,7 @@ let view = function (company) {
                         <input name="contact-data" class="contatc__gridForm-elem" type="text" id="tlf" placeholder="Phone">
                         <input name="contact-data" class="contatc__gridForm-elem" type="email" id="email" placeholder="Email">
                         <textarea name="contact-data" id="comentario" placeholder="Escribe tu comentario"></textarea>
-                        <button class="contatc__gridForm-btn grad" type="button" id="form__button" value="Enviar" >Enviar</button>
+                        <button class="generic-btn grad pointer" type="button" id="form__button" value="Enviar" >Enviar</button>
                     </form>
                     <div class="general-padding4">
                         <div class="contact-icon__grid">

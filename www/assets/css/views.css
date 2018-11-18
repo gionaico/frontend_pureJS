@@ -1,4 +1,23 @@
 /*
+    ******************************************  GENERIC BUTTON
+    ******************************************  
+    ******************************************          
+*/
+.generic-btn {
+    height: 45px;
+    color: var(--white);
+    font-weight: var(--boldLetters);
+    font-size: var(--fontSizeText);
+    border: none;
+}
+
+.generic-btn:hover {
+    color: var(--grad2);
+    font-weight: var(--boldLetters);
+    background-image: var(--white);
+    border: 3px solid var(--grad2);
+}
+/*
     ******************************************  HEADER
     ******************************************  
     ******************************************          
@@ -309,6 +328,86 @@
     max-width: var(--generalWidth);
 }
 
+
+/*
+    ******************************************  TARIFA-COMPONENT
+    ******************************************  
+    ******************************************          
+*/
+.cajaTarifaGeneral__price{
+    color:var(--green);
+    padding-top: 20px;
+    font-weight: var(--boldLetters);
+}
+.btn-width{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cajaTarifaGeneral__divBtn{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.cajaTarifa>p {
+    text-align: center;
+}
+.tarifas-container {
+    max-width: var(--generalWidth);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    padding: 10px;
+}
+
+.cajaTarifa {
+    /* border: 1px solid var(--blueGeneral); */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    /* border-top: 1px solid var(--texColor); */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* border-radius: 10px; */
+}
+
+.cajaTarifaGeneral {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    /* gap: 10px; */
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    padding-bottom: 20px;
+    border-radius: 25px;
+    border: 1px solid var(--grad2);
+}
+
+.tituloTarifa {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    background-color: var(--blueGeneral);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 25px;
+    color: var(--white);
+    height: 180px;
+}
+
+
+
+.tituloSubtarifa {
+    color: var(--blueGeneral);
+    font-size: var(--fontSizeText);
+    font-weight: var(--boldLetters);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contenidoSubtarifa {
+    padding: 2px 10px 2px 10px;
+}
 /*
     ******************************************  HOME
     ******************************************  
@@ -340,55 +439,14 @@
     gap: 50px;
 }
 
-.tarifas-container {
-    max-width: var(--generalWidth);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-}
-
-.cajaTarifa {
-    border: 1px solid red;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5px;
-}
-
-.cajaTarifaGeneral {
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    gap: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.tituloTarifa {
-    display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    flex-direction: column;
-}
 
 .parrafoTitle {
-    color: var(--blueGeneral);
+    color: var(--white);
     font-size: var(--fontSizeSubtitle);
     font-weight: var(--boldLetters);
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-.tituloSubtarifa {
-    color: var(--blueGeneral);
-    font-size: var(--fontSizeText);
-    font-weight: var(--boldLetters);
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.contenidoSubtarifa {
-    padding: 2px 10px 2px 10px;
-}
-
 /*
     ******************************************  HERO
     ******************************************  
@@ -501,19 +559,7 @@
     padding: 10px;
 }
 
-.contatc__gridForm-btn {
-    height: 45px;
-    color: var(--white);
-    font-weight: var(--boldLetters);
-    font-size: var(--fontSizeText);
-    border: none;
-}
-.contatc__gridForm-btn:hover {
-    color: var(--grad2);
-    font-weight: var(--boldLetters);
-    background-image: var(--white);
-    border: 3px solid var(--grad2);
-}
+
 
 .fa-angle-left {
     border-right: 4px solid black;

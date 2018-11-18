@@ -1,7 +1,7 @@
 /** @module tarifa/html */
 
 let tarifa = function (tarifas) {
-    /* console.log("tarifas component", tarifas) */
+    console.log("tarifas component", tarifas)
     let subtarifa= function (array) {
         return array.map((item, i) => {
             switch (item.tipo_tarifa) {
@@ -38,12 +38,16 @@ let tarifa = function (tarifas) {
     }
     let arrayDivs = tarifas.map((item, i) => {
         return `
-            <div class="cajaTarifaGeneral">
+            <div class="cajaTarifaGeneral">                
                 <div class="tituloTarifa">
                     <p class="parrafo parrafoTitle">${item.nombretarifa}</p><br>
-                    <p class="parrafo parrafoSubitle">${item.pretitulo}</p>
+                    <p class="parrafo parrafoSubitle">${item.pretitulo}</p><br>
+                    <p class="cajaTarifaGeneral__price">${item.precio}$ / mes</p>
                 </div>
                 ${subtarifa(item.subtarifas).join('')}
+                <div class="cajaTarifaGeneral__divBtn">
+                    <a href="#uno/${item.codtarifa}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                </div>
             </div>`
     });
     

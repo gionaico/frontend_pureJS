@@ -2,6 +2,7 @@ import {Router} from './router.js'; //Knows what to do for every single URL
 import HomeController from './component/Home.component';
 import ContactController from './component/Contact.component';
 import TarifasController from './component/Tarifas.component';
+import TarifaDetailsController from './component/TarifaDetails.component';
 import AvisoLegalController from './component/AvisoLegal.component';
 import PoliticaCookiesController from './component/PoliticaCookies.component';
 import {header} from './views/header';
@@ -18,18 +19,21 @@ Router
     new PoliticaCookiesController();
   })
   .add(/tarifas/, function () {
-    /* console.log("cookies"); */
-    new TarifasController({oye:"nice"});
+    tarifasView();
+  })
+  .add(/uno\/(.*)/, function () {
+    console.log('uno', arguments, arguments["0"]);
+    tarifaDetailsView(arguments["0"])
   })
   .add(/avisoLegal/, function () {
     /* console.log("avisoLegal"); */
     new AvisoLegalController();
   }).listen()
   .add(/products\/(.*)\/edit\/(.*)/, function () {
-    console.log('products', arguments);
+    console.log('productsclick', arguments);
   })
   .add(/products\/(.*)\/edit\/(.*)/, function () {
-    console.log('products', arguments);
+    console.log('products2', arguments);
   })
   .add(function () {
     homeView();
@@ -74,7 +78,7 @@ function homeView(){
     });
     /*console.log("values-------------",  p); */
   }).catch(reason => {
-    console.log("Failed! Home View", reason)
+    console.log("Failed! index Home View", reason)
   });
 }
 
@@ -87,7 +91,35 @@ function contactView() {
     });
     initMap(JSON.parse(response));
   }).catch(function (error) {
-    console.log("Failed! Contact View", error);
+    console.log("Failed! index Contact View", error);
+  });
+}
+
+function tarifasView() {
+  /* alert('contactView'); */
+  get('/tarifa/').then(function (response) {
+    let tar = JSON.parse(response)
+    new TarifasController({
+      tarifas: JSON.parse(response).results
+    });
+  }).catch(function (error) {
+    console.log("Failed! index tarifas View", error);
+  });
+}
+
+function tarifaDetailsView(idTarifa) {
+  alert('tarifaDetailsView');
+  get('/tarifa/').then(function (response) {
+    let tar = JSON.parse(response)
+    let filterTarifa = tar.results.filter(item => item.codtarifa == idTarifa)
+    console.log(filterTarifa.length)
+    if (filterTarifa.length > 0) {
+      new TarifaDetailsController({
+        tarifas: filterTarifa[0]
+      });
+    }    
+  }).catch(function (error) {
+    console.log("Failed! index tarifaDetails View", error);
   });
 }
 

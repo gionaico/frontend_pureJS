@@ -13,6 +13,7 @@ export default class HomeController extends ViewComponent {
         this._cajas_home = obj.cajas_home;
         this._sliderElements = obj.sliderElements;
         this._tarifas = obj.tarifas;
+        console.log(this._tarifas)
         super.buildHtml(this.render(), "main", "home");
         new FgSlider('slider-1', {
             autoplay: false, // autoplay on / off
