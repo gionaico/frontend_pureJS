@@ -39,6 +39,7 @@
     * Sizes
     * ======================================================================== */
     --generalWidth: 1000px;
+    --genSpecialWidth: 900px;
     --mediumWidth: 500px;
     --smallWidth: 250px;
     --iconSize: 30px;
@@ -100,7 +101,9 @@ body {
     /* alineacion vertical */
     align-items: center;
 }
-
+.centrar-texto {
+    text-align: center;
+}
 .margin-elements {
     margin-top: 30px;
 }
@@ -112,4 +115,7 @@ body {
 
 .icon-size{
     height: var(--iconSize);
+}
+.justify-self{
+    justify-self: center;
 }

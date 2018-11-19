@@ -46,7 +46,7 @@ let tarifa = function (tarifas) {
                 </div>
                 ${subtarifa(item.subtarifas).join('')}
                 <div class="cajaTarifaGeneral__divBtn">
-                    <a href="#uno/${item.codtarifa}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                    <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
                 </div>
             </div>`
     });

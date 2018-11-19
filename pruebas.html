@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pruebas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .article-container{
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap:10px;
+        }
+        .article-container__img{
+            height: 150px;
+        }
+        .article-container__divImg{
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            padding-top:20px; 
+        }
+        .article-container__info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            background-color: aqua;
+        }
+        .article-container__btnContainer{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="article-container">
+        <div>
+            <div class="article-container__divImg">
+                <img class="article-container__img" src="./www/assets/media/mobile_tarifa.jpg" alt="">
+            </div>
+            <div class="article-container__info">
+                sdfgsdgdg
+            </div>
+            <div class="article-container__btnContainer">
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles2</a>
+            </div>
+        </div>
+        
+
+        <div>
+            <div class="article-container__divImg">
+                <img class="article-container__img" src="./www/assets/media/mobile_tarifa.jpg" alt="">
+            </div>
+            <div class="article-container__info">
+                sdfgsdgdg
+            </div>
+            <div class="article-container__btn">
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles2</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="article-container__divImg">
+                <img class="article-container__img" src="./www/assets/media/mobile_tarifa.jpg" alt="">
+            </div>
+            <div class="article-container__info">
+                sdfgsdgdg
+            </div>
+            <div class="article-container__btn">
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles2</a>
+            </div>
+        </div>
+
+        <div>
+            <div class="article-container__divImg">
+                <img class="article-container__img" src="./www/assets/media/mobile_tarifa.jpg" alt="">
+            </div>
+            <div class="article-container__info">
+                sdfgsdgdg
+            </div>
+            <div class="article-container__btn">
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles</a>
+                <a href="#tarifa/${item.slug}" class="btn-width generic-btn grad pointer" type="button">Mas detalles2</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

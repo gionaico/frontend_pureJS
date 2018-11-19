@@ -1,4 +1,63 @@
 /*
+    ******************************************  ARTICULO VIEW
+    ******************************************  
+    ******************************************          
+*/
+.article-container {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.article-filter {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+
+.article-container__img {
+    height: 150px;
+    max-width: 90%;
+}
+
+.article-container__divImg {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding-top: 20px;
+}
+.article-container__pvp{
+    color:var(--green);
+    font-weight: var(--boldLetters);
+}
+.article-container__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+}
+.article-container__pTitle{
+    color: var(--blueGeneral);
+    font-weight: var(--boldLetters);
+}
+.article-container__padding{
+    padding-top: 15px;
+}
+.article-container__btnContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+/*
     ******************************************  GENERIC BUTTON
     ******************************************  
     ******************************************          
@@ -334,6 +393,44 @@
     ******************************************  
     ******************************************          
 */
+.tarifa-details__subtarifa-text-title{
+    color: var(--blueGeneral);
+    font-weight: var(--boldLetters);
+    padding: 5px;
+}
+.tarifa-details__subtarifa-divInterno{
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+.tarifa-details__subtarifa-text{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border: 1px solid var(--blueGeneral);
+}
+.tarifa-details__subtarifa-price{
+    color: var(--green);
+    font-weight: var(--boldLetters);
+    padding: 10px;
+}
+.tarifa-details__subtarifa-bg {
+    background-color: var(--blueGeneral);
+    color: var(--white);
+}
+.tarifa-details__subtarifa-img{
+    width: 100%;
+}
+.tarifas-details-container{
+    max-width: var(--genSpecialWidth);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap:30px;
+    padding: 20px;
+}
+.tarifa-details__subtarifa{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
 .cajaTarifaGeneral__price{
     color:var(--green);
     padding-top: 20px;
@@ -592,5 +689,8 @@
     }
     .contact__grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .tarifas-details-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

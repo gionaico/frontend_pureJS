@@ -36,6 +36,10 @@ let header = function(company) {
           <li id="goTarifas" name="tarifas" class="goTo pointer nav-item">
             <a class="nav-link" name="tarifas" href="#tarifas">Tarifas</a>
           </li>
+
+          <li id="goCatalogo" name="catalogo" class="goTo pointer nav-item">
+            <a class="nav-link" name="catalogo" href="#catalogo">Catalogo</a>
+          </li>
     
           <li id="goContact" name="contact" class="goTo pointer nav-item">
             <a class="nav-link" name="contact" href="#contact">Contact</a>
