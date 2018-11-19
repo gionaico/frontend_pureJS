@@ -1,19 +1,17 @@
         
-#Html5
-    *Using of:
-        - <meta></meta>
-        - humans.txt
-        - robots.txt
+#Html5    
+      *<meta></meta>
+      *humans.txt
+      *robots.txt
 
 #Slyles
-    *Using of:
-        - Grid-Layout (auto-fill, auto-fit, gap ...)
-        - Flex box
-        - Pseudo-clases
-        - Media querys
-        - Different types of positions (absolute, relative)
-        - Different types of write css "selectors" (.nameClass, .nameClass>p, .nameClass.otherClass, ....) 
-        - Bem Methodology
+        *Grid-Layout (auto-fill, auto-fit, gap ...)
+        *Flex box
+        *Pseudo-clases
+        *Media querys
+        *Different types of positions (absolute, relative)
+        *Different types of write css "selectors" (.nameClass, .nameClass>p, .nameClass.otherClass, ....) 
+        *Bem Methodology
 
 #Second send
     *Rates
@@ -32,22 +30,22 @@
     Testing of methods, funtions, classes to have a control about how work the app.  
 
 #Segundo Envio
-    * Tarifas
+    *Tarifas
         En esta parte puedes ver todas las tarifas que están disponibles en este momento.
-    * Detalles de tarifas
+    *Detalles de tarifas
         Puedes ver los detalles de cada tarifa.
-    * Catálogo
+    *Catálogo
         La vista del catálogo le ofrece todos los productos y puede hacer un filtro de ellos.
-    * Jsdocs
+    *Jsdocs
         Cada clase, función, módulo tiene un comando que explica qué hacen.
-    * Super clase
+    *Super clase
         Uso una súper clase que tiene un método que luego utilizo para las clases extendidas.
-    * Traducción
+    *Traducción
         Uso cokies para guardar el idioma que el usuario ha seleccionado y cambiar los templeates a ese idioma.
-    * Testing
+    *Testing
         Pruebas de metodos, funciones, clases para tener un control sobre cómo trabajar la aplicación.
 
 #Improvements
-    #Information "CACHE" is saved in localstorage, which gives us a reduction in the number of requests to the backend.
-    #Use of components which are reused in different places.
-    #Lenguage is saved in cookies.
+    *Information "CACHE" is saved in localstorage, which gives us a reduction in the number of requests to the backend.
+    *Use of components which are reused in different places.
+    *Lenguage is saved in cookies.
