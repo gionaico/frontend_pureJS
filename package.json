@@ -9,11 +9,9 @@
     "build": "webpack --mode production",
     "doc": "jsdoc -c jsdoc.json README.md src/*",
     "docprueba": "jsdoc ./node_modules/.bin/jsdoc src/*",
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "jest --env=jsdom"
   },
-  "author": "",
+  "author": "Giovanny Coque",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -34,5 +32,10 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     }
+  },
+  "dependencies": {
+    "@k3rn31p4nic/google-translate-api": "^1.0.5",
+    "fs": "0.0.1-security",
+    "google-translate-api": "^2.3.0"
   }
 }

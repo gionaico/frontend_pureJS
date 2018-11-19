@@ -1,3 +1,4 @@
+
 import {view} from '../views/cajas-home';
 import { tarifa } from './common/tarifa.component';
 import { sliderComponent } from './common/slider.component';

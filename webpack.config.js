@@ -16,6 +16,10 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
+  /* node: {
+    net: 'empty',
+    fs: "empty"
+  } */
   /* module: {
     loaders: [
       {

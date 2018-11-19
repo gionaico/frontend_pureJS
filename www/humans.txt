@@ -1,0 +1,9 @@
+/* TEAM */
+
+	CEO: Giovanny Coque
+
+
+/* SITE */
+	Site Name: Smile Phone S.L
+	Site URL: https://www.smile-phone.com/
+	Language: Spanish

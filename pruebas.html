@@ -40,6 +40,19 @@
 
 </head>
 <body>
+
+    <div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
     <div class="article-container">
         <div>
             <div class="article-container__divImg">
@@ -96,3 +109,45 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+<!-- 
+const gtaLangs = {
+    'ca': 'Catalan',
+    'es': 'Spanish'
+};
+const translate = require('@k3rn31p4nic/google-translate-api');
+const fs = require('fs');
+const englishLang = require('./i18n/englishOriginal.json');
+console.log("tra", englishLang);
+
+Object.keys(gtaLangs).forEach((keyGTA) => {
+    let fileJSON = {};
+    /* console.log('Translating to ' + keyGTA); */
+
+    Object.keys(englishLang).forEach((key) => {
+        console.log("key", key);
+        translate(englishLang[key], {
+            to: keyGTA
+        }).then(res => {
+            console.log("translate", res.text);
+            fileJSON[key] = res.text;
+
+            fs.writeFile('src/lib/i18n/' + gtaLangs[keyGTA] + '.json', JSON.stringify(fileJSON), 'utf8', (err) => {
+                if (err) {
+                    throw err;
+                }
+                console.log('The file src/lib/i18n/' + gtaLangs[keyGTA] + '.json has been saved!');
+
+            });
+        }).catch(err => {
+            console.error(err);
+        });
+
+    });
+});
+ -->

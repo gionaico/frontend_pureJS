@@ -50,9 +50,20 @@ function setLocalStorage(oldLocalObj, newLocalObj) {
   }
   
 }
+function checkLng() {
+  let lng = readCookie("lng");
+  let textos;
+  if (lng==null) {
+    createCookie("lng", "es", 1);
+    lng="es";
+  }
+  textos = require(`./lib/i18n/${lng}.json`)
+  return textos; 
+}
 
 function get(url) {
   let local= checkLocalStorage()
+  console.log(checkLng(), window.location.href)
 
   return new Promise(function (resolve, reject) {
     let filterRoute = local.filter(item => item.url === url)

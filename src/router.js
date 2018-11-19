@@ -3,6 +3,7 @@
  */
 
 var Router = {
+    
     routes: [],
     mode: null,
     root: '/',

@@ -1,3 +1,4 @@
+  /* const translate = require('google-translate-api'); */
 import {Router} from './router.js'; //Knows what to do for every single URL 
 import HomeController from './component/Home.component';
 import ContactController from './component/Contact.component';
@@ -6,7 +7,7 @@ import TarifaDetailsController from './component/TarifaDetails.component';
 import CatalogoController from './component/Catalogo.component';
 import AvisoLegalController from './component/AvisoLegal.component';
 import PoliticaCookiesController from './component/PoliticaCookies.component';
-import {header} from './views/header';
+import HeaderController from './component/header.component';
 import {footer} from './views/footer';
 import {get, initMap} from './utils';
 
@@ -50,7 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     values.forEach(element => {
       array.push(JSON.parse(element))
     });
-    document.querySelector('header').innerHTML = header(array[1]);
+    new HeaderController({
+      "company": array[1],
+      "label": 'header'
+    })
     document.querySelector('footer').innerHTML = footer(array[1]);
     
     new HomeController({
@@ -60,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
   /*console.log("values-------------",  p); */
   }).catch(reason => {
-    console.log("reasonInicial--------", reason)
+    console.log("DOMContentLoaded--------", reason)
   });
 });
 
