@@ -1,5 +1,4 @@
-/** @module home-view */
-
+/** @function home-view */
 let view = function (datos) {
     return `      
         <div class="home-container center-element margin-elements">

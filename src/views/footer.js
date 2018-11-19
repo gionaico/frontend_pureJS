@@ -1,5 +1,4 @@
-/** @module footer-view*/
-
+/** @function footer-view*/
 let footer = function(company) {
     return `
       <div class="footer__menu center-inside-elements-flex">

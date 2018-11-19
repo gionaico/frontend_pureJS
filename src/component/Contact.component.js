@@ -3,9 +3,13 @@ import {hero} from './common/hero.component';
 import {validation, cleanError} from '../utils';
 import ViewComponent from "../classes/ViewComponent.class";
 
-/** Class representing the Contact view. */
+/**
+ * This is the class ContactController extends ViewComponent
+ * Show Contact View.
+ * @class 
+ */
 class ContactController extends ViewComponent {
-
+    /** @constructs */
     constructor(obj) {
         super()
         this._datosEmpresa = obj.datosEmpresa;

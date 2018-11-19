@@ -1,5 +1,4 @@
-/** @module slider/carrousel */
-
+/** @module sliderComponent */
 let sliderComponent = function (data) {
     
     let arrayDivs=data.map((item, i) => {

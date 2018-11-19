@@ -1,5 +1,4 @@
-/** @module tarifa/html */
-
+/** @module tarifa */
 let tarifa = function (tarifas) {
     console.log("tarifas component", tarifas)
     let subtarifa= function (array) {

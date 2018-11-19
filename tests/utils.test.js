@@ -1,5 +1,6 @@
 import {Settings} from '../src/settings';
-import {validation, get, cleanError} from '../src/utils';
+import * as utils from '../src/utils';
+
 jest.mock('../src/settings');
 
 beforeEach(() => {
@@ -18,13 +19,13 @@ beforeEach(() => {
 
 test('This test check if the ---validation--- function change the class of a input.', () => {
     let obj={name:""}
-    let valid=validation(obj);
+    let valid = utils.validation(obj);
     expect(valid).toBe(false);
     expect(document.getElementById("name").classList.contains("form-error")).toBe(true);
 });
 
 test('This test check if the ---cleanError--- function change the class of a input.', () => {
-    let valid = cleanError("name2");
+    let valid = utils.cleanError("name2");
     // Creamos el evento.
     var event = document.createEvent('Event');
     /* Definimos el nombre del evento que es 'build'.*/
@@ -33,4 +34,19 @@ test('This test check if the ---cleanError--- function change the class of a inp
     let elem=document.getElementById("name2");
     elem.dispatchEvent(event);
     expect(elem.classList.contains("form-error")).toBe(false);
+});
+
+test('This test check if the ---checkLng funtion--- return a object.', () => {
+    let fecha = new Date();
+    fecha.setFullYear(fecha.getFullYear() + 1);
+    document.cookie = `lng=es; expires=${fecha.toString()}`;
+    expect(typeof utils.checkLng()).toBe("object");
+    expect(utils.readCookie("lng")).toBe("es");
+});
+
+test('This test check if the ---readCookie funtion--- return a object.', () => {
+    let fecha = new Date();
+    fecha.setFullYear(fecha.getFullYear() + 1);
+    document.cookie = `lng=loloololo; expires=${fecha.toString()}`;
+    expect(utils.readCookie("lng")).toBe("loloololo");
 });

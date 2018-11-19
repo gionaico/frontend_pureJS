@@ -5,16 +5,20 @@ import { sliderComponent } from './common/slider.component';
 import { FgSlider } from '../classes/Slider.class';
 import ViewComponent from "../classes/ViewComponent.class";
 
-/** Class representing the Home view. */
-export default class HomeController extends ViewComponent {
-
+/**
+ * This is the class HomeController extends ViewComponent
+ * Show Home View.
+ * @class 
+ */
+class HomeController extends ViewComponent {
+    /** @constructs */
     constructor(obj) {
-        /* console.log(obj) */
+        /* console.log("HomeController---", obj) */
         super()
         this._cajas_home = obj.cajas_home;
         this._sliderElements = obj.sliderElements;
         this._tarifas = obj.tarifas;
-        console.log(this._tarifas)
+        /* console.log(this._tarifas) */
         super.buildHtml(this.render(), "main", "home");
         new FgSlider('slider-1', {
             autoplay: false, // autoplay on / off
@@ -42,3 +46,4 @@ export default class HomeController extends ViewComponent {
     }
 }
 
+export default HomeController;

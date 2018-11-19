@@ -63,7 +63,7 @@ function checkLng() {
 
 function get(url) {
   let local= checkLocalStorage()
-  console.log(checkLng(), window.location.href)
+  /* console.log(checkLng(), window.location.href) */
 
   return new Promise(function (resolve, reject) {
     let filterRoute = local.filter(item => item.url === url)
@@ -219,5 +219,8 @@ export {
    * @param {String} url -Its a url to connect with the backend.
    * @returns {object} Status of the sending of information.
    */
-  post
+  post,
+  checkLng,
+  createCookie,
+  readCookie
 };

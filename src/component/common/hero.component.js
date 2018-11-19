@@ -1,5 +1,4 @@
-/** @module contact-view */
-
+/** @module hero */
 let hero= function(title, grad, img=null){
     if (img) {
         return `<div class="banner" style="background-image: url('${img}')"></div> `

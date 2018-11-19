@@ -3,7 +3,6 @@ const $ = require('jquery');
 
 import {view  as home} from '../src/views/cajas-home';
 import {view  as contact} from '../src/views/contact';
-import {header} from '../src/views/header';
 import {footer} from '../src/views/footer';
 
 import {hero} from '../src/component/common/hero.component';
@@ -31,14 +30,6 @@ beforeEach(() => {
 });
 
 
-test('This test check if the ---HEADER--- function return a string and it is using the json data.', () => {
-  let company = datos.company;
-  let headerView = header(company);
-
-  $("#mainFaker").append(headerView);
-  let href = $("#facebook").attr("href");
-  expect(href).toBe(company.facebook);
-});
 
 test('This test check if the ---FOOTER--- function return a string and it is using the json data.', () => {
   let company = datos.company;

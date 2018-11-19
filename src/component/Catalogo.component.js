@@ -2,9 +2,14 @@ import ViewComponent from "../classes/ViewComponent.class";
 import {hero} from './common/hero.component';
 import {articulo} from './common/articulos.component';
 
-/** Class representing the Catalogo view. */
-export default class CatalogoController extends ViewComponent {
+/**
+ * This is the class CatalogoController extends ViewComponent
+ * Show Catalogo View.
+ * @class 
+ */
+class CatalogoController extends ViewComponent {
 
+    /** @constructs */
     constructor(obj) {
         console.log("CatalogoController---", obj)
         super()
@@ -50,6 +55,9 @@ export default class CatalogoController extends ViewComponent {
         let vm=this;
     }  
     
+    /**
+     * Make the filter
+     */
     printSelectOption(){
         let obj=this._filters;
         let element=[];
@@ -117,3 +125,4 @@ export default class CatalogoController extends ViewComponent {
             `            
     }
 }
+export default CatalogoController;

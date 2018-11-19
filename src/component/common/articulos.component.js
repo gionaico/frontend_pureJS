@@ -1,5 +1,6 @@
 /** @module articulos/html */
 
+/** @module articulo */
 let articulo = function (articulos) {
     console.log("articulos component", articulos)
     let articulosStructure = function (array) {

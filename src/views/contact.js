@@ -1,5 +1,4 @@
-/** @module contact-view */
-
+/** @function contact-view */
 let view = function (company) {
     return `<div class="contact center-element">
                 

@@ -2,9 +2,13 @@ import ViewComponent from "../classes/ViewComponent.class";
 import {hero} from './common/hero.component';
 import {tarifaDetails} from './common/tarifaDetails.component';
 
-/** Class representing the Home view. */
-export default class TarifaDetailsController extends ViewComponent{
-
+/**
+ * This is the class TarifaDetailsController extends ViewComponent
+ * Show Tarifa-Details View.
+ * @class 
+ */
+class TarifaDetailsController extends ViewComponent{
+    /** @constructs */
     constructor(obj) {
         super()
         this._tarifa = obj.tarifas;
@@ -21,8 +25,8 @@ export default class TarifaDetailsController extends ViewComponent{
         return `
             ${hero(`Tarifa ${this._tarifa.nombretarifa}`, "grad")}
             ${tarifaDetails(this._tarifa)}
-           
             `            
     }
 }
 
+export default TarifaDetailsController;

@@ -3,7 +3,10 @@ const fs = require('fs');
 const en_lng = require('./i18n/englishOriginal.json');
 const lenguages = require('./lenguages.json');
 
-
+/**
+ * @file Manages the files json which the app will be able to use.
+ * @author Giovanny Coque 
+ */
 Object.keys(lenguages).forEach((lng_Key) => {
     let json = {};
     /* console.log(0000000000,'Translating to ' + lng_Key); */

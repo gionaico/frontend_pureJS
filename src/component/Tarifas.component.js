@@ -1,9 +1,13 @@
 import ViewComponent from "../classes/ViewComponent.class";
 import {hero} from './common/hero.component';
 import { tarifa } from './common/tarifa.component';
-/** Class representing the Home view. */
-export default class TarifaController extends ViewComponent{
-
+/**
+ * This is the class TarifaController extends ViewComponent
+ * Show Tarifa View.
+ * @class 
+ */
+class TarifaController extends ViewComponent{
+    /** @constructs */
     constructor(obj) {
         console.log("tarifas", obj)
         super()
@@ -26,3 +30,4 @@ export default class TarifaController extends ViewComponent{
     }
 }
 
+export default TarifaController;

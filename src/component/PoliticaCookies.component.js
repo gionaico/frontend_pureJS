@@ -1,9 +1,13 @@
 import {hero} from './common/hero.component';
 import ViewComponent from "../classes/ViewComponent.class";
 
-/** Class representing the PoliticaCookies view. */
+/**
+ * This is the class PoliticaCookiesController extends ViewComponent
+ * Show PoliticaCookies View.
+ * @class 
+ */
 class PoliticaCookiesController extends ViewComponent {
-
+    /** @constructs */
     constructor() {
         super()
         super.buildHtml(this.render(), "main", "PoliticaCookiesController");

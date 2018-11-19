@@ -1,7 +1,6 @@
 /**
  * This is a variable wich contain the router configuration
  */
-
 var Router = {
     
     routes: [],
