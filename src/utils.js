@@ -61,6 +61,17 @@ function checkLng() {
   return textos; 
 }
 
+function checkLng2() {
+  let lng = readCookie("lng");
+  let textos;
+  if (lng == null) {
+    createCookie("lng", "es", 1);
+    lng = "es";
+  }
+  textos = require(`./lib/i18n/${lng}.json`)
+  return {textos:textos, lng:lng};
+}
+
 function get(url) {
   let local= checkLocalStorage()
   /* console.log(checkLng(), window.location.href) */
@@ -222,5 +233,6 @@ export {
   post,
   checkLng,
   createCookie,
-  readCookie
+  readCookie,
+  checkLng2
 };

@@ -4,10 +4,10 @@ let view = function (company) {
                 
                 <div class="contact__grid">
                     <form class="contact__gridForm general-padding4">
-                        <input name="contact-data" class="contatc__gridForm-elem" type="text" id="nombre" placeholder="Name">
-                        <input name="contact-data" class="contatc__gridForm-elem" type="text" id="tlf" placeholder="Phone">
-                        <input name="contact-data" class="contatc__gridForm-elem" type="email" id="email" placeholder="Email">
-                        <textarea name="contact-data" id="comentario" placeholder="Escribe tu comentario"></textarea>
+                        <input name="contact-data" class="contatc__gridForm-elem" maxlength="50" type="text" id="nombre" placeholder="Name" required>
+                        <input name="contact-data" class="contatc__gridForm-elem" type="number" id="tlf" placeholder="Phone" required>
+                        <input name="contact-data" class="contatc__gridForm-elem" type="email" id="email" placeholder="Email" required>
+                        <textarea name="contact-data" id="comentario" placeholder="Escribe tu comentario" maxlength="150" minlength="20" required></textarea>
                         <button class="generic-btn grad pointer" type="button" id="form__button" value="Enviar" >Enviar</button>
                     </form>
                     <div class="general-padding4">

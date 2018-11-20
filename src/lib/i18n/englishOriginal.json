@@ -1,7 +1,7 @@
 {
     "Home": "Home",
     "About": "About",
-    "Contact": "Contact",
+    "Contact":"Contact",
     "Name": "Name",
     "Email": "Email",
     "Phone": "Phone",
@@ -23,5 +23,10 @@
     "avisoLegalTitle2": "PRIVACY POLICY",
     "avisoLegalTitle3": "TERMS OF USE",
     "avisoLegalTitle4": "APPLICABLE LAW AND JURISDICTION",
-    "avisoLegalHeroTitle": "General conditions of use of the Smile-Phone S.L. website"
+    "avisoLegalHeroTitle": "General conditions of use of the Smile-Phone S.L. website",
+    "misionText": "Define the philosophy and mission of the company or business unit. - Establish short and long-term objectives to achieve the mission of the company, which defines the present and future business activities of an organization.",
+    "misionp2": "What is our raison d'être: apart from achieving profit, we must know and make known the motivations of the creators to make it a reality. Telling our story will make both employees and consumers feel closer to our brand.",
+    "cookiesHref":"Cookies",
+    "AvisoLegalHref": "Aviso Legal"
+
 }

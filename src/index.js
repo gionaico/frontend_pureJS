@@ -7,8 +7,10 @@ import CatalogoController from './component/Catalogo.component';
 import AvisoLegalController from './component/AvisoLegal.component';
 import PoliticaCookiesController from './component/PoliticaCookies.component';
 import HeaderController from './component/header.component';
+import FooterController from './component/footer.component';
+
 import {footer} from './views/footer';
-import {get, initMap, checkLng, createCookie} from './utils';
+import {get, initMap, checkLng, createCookie, checkLng2} from './utils';
 
 /**
  * @file Manages the what go to print in the main section.
@@ -58,6 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
       "label": 'header',
       "textos": checkLng()
     })
+
+    let o = new FooterController({
+      "company": array[1],
+      "label": 'footer',
+      "textos": checkLng()
+    })
     
     let lenguage = document.getElementsByName(`lng_click`);
     lenguage.forEach((el) => {
@@ -70,13 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     
-    document.querySelector('footer').innerHTML = footer(array[1]);
-    
-    new HomeController({
-          cajas_home: array[0],
-          sliderElements: array[1].textos,
-          tarifas: array[2].results.filter(item => item.destacado != false)
-          });
+    /* document.querySelector('footer').innerHTML = footer(array[1]); */
+
+    homeView()
   /*console.log("values-------------",  p); */
   }).catch(reason => {
     console.log("DOMContentLoaded--------", reason)
@@ -97,6 +101,11 @@ function changeLenguageMain() {
       break;
     
     case "home":
+      homeView()
+      break;
+
+    case "":
+      homeView()
       break;
     
     case "cookies":
@@ -125,7 +134,8 @@ function homeView(contenido = checkLng()) {
       cajas_home: array[0],
       sliderElements: array[1].textos.filter(item => item.key.substring(0, 9) === "jumbotron"),
       tarifas: array[2].results.filter(item => item.destacado != false),
-      textos: contenido
+      textos: contenido,
+      currentLeng: checkLng2()
     });
     /*console.log("values-------------",  p); */
   }).catch(reason => {

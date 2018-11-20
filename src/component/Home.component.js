@@ -13,11 +13,21 @@ import ViewComponent from "../classes/ViewComponent.class";
 class HomeController extends ViewComponent {
     /** @constructs */
     constructor(obj) {
-        /* console.log("HomeController---", obj) */
+        console.log("HomeController---", obj, obj.currentLeng.lng, obj.cajas_home[0].lang)
+        console.log("HomeController---", obj.cajas_home.filter(item => {
+          if (item.lang == obj.currentLeng.lng) {
+              return item
+          }  
+        }))
         super()
-        this._cajas_home = obj.cajas_home;
+        /* this._cajas_home = obj.cajas_home; */
         this._sliderElements = obj.sliderElements;
         this._tarifas = obj.tarifas;
+        this._cajas_home = obj.cajas_home.filter(item => {
+            if (item.lang == obj.currentLeng.lng) {
+                return item
+            }
+        })
         /* console.log(this._tarifas) */
         super.buildHtml(this.render(), "main", "home");
         new FgSlider('slider-1', {
