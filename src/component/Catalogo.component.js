@@ -40,14 +40,6 @@ class CatalogoController extends ViewComponent {
                     }
                 }
                 document.getElementById("article-container").innerHTML = articulo(uno);
-                /* let nuevosArt = this._articulos.filter(item => {
-                    for (const key in ob) {
-                        if (item[key] == ob[key]) {
-                            return item
-                        }
-                    }
-                });  */
-                /* console.log("pillando e", e.target.id, e.target.value, ob, nuevosArt) */
                 console.log(Object.keys(ob).length, "pillando e", e.target.id, e.target.value, ob, "dos---", dos, "uno----", uno)
             });
         });

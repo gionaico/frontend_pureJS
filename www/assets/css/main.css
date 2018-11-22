@@ -1,8 +1,20 @@
+/*-------------------------------------------*\
+   Pseudo-classes
+ 
+   Index
+   - Media queries: width's sizes which I use.
+   - Colors: colors which I use.
+   - Sizes: font-size, font-width, and width of general elements
+   - General classes: general classes to do padding, margin, pointer gradient....
+\*-------------------------------------------*/
+
+
 :root {
     --font-family: 'Rubik', Helvetica, Arial, sans-serif;
     /*
     * Media queries breakpoints
     * ======================================================================== */
+
     /* Extra small screen / phone horiz */
     --sc-xs-min-horiz: 320px;
     /* Extra small screen / phone */
@@ -13,6 +25,7 @@
     --sc-md-min: 992px;
     /* Large screen / wide desktop */
     --sc-lg-min: 1200px;
+    
     /*
     * Colors
     * ======================================================================== */
@@ -35,6 +48,7 @@
     --texColor2:#535353;
     --green:#00A648;
 
+    
     /*
     * Sizes
     * ======================================================================== */
@@ -50,6 +64,11 @@
     --boldLetters: 700;
 }
 
+
+
+/*
+    * General classes
+    * ======================================================================== */
 * {
     margin: 0;
 }
@@ -97,8 +116,8 @@ body {
     height: 500px!important;
 }
 
+/* alineacion vertical */
 .centrado-vertical {
-    /* alineacion vertical */
     align-items: center;
 }
 .centrar-texto {

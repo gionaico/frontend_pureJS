@@ -1,3 +1,42 @@
+/*-------------------------------------------*\
+
+Here in this file is where I use many variables which came from main.css, 
+I do this because if in the future I want to change any color or size,
+I will be able to do it easily using the main file.
+
+
+Section index ************************************
+
+   - Articulo View: it is the styles used by the articulos componet.
+
+   - Generic Button: it is the styles used by the buttons.
+   
+   - Header: it is the styles used by the header section.
+   
+   - Footer: it is the styles used by the footer section.
+   
+   - Tarifa: it is the styles used by the tarifa componet.
+   
+   - Home: it is the styles used by the home componet.
+   
+   - Slider/Carrousel: it is the styles used by the Slider/Carrousel section.
+   
+   - Aviso-legal: it is the styles used by the aviso-legal section.
+   
+   - Contact: it is the styles used by the contact section.
+   
+   - Hero: it is the styles used by the contact componet.
+
+   - Media querys: it is how some elements will change when the screen width change.
+\*-------------------------------------------*/
+
+
+
+
+
+
+
+
 /*
     ******************************************  ARTICULO VIEW
     ******************************************  
